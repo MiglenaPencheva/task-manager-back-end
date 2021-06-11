@@ -1,0 +1,13 @@
+<h1>Delete Task</h1>
+<div class="form">
+    <form action="/{{_id}}/delete" method="POST">
+        
+        <label for="name">Content</label>
+        <textarea id="name" name="content" disabled="true" /></textarea>
+
+        <p>Are you sure you want to delete the task?</p>
+
+        <input type="submit" value="Cancel">
+        <input type="submit" value="Delete">
+    </form>
+</div>

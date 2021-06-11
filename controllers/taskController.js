@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const { getAll, create, getOne } = require('../services/taskService');
+const { getAll, create, getOne, remove } = require('../services/taskService');
 
 router.get('/', async (req, res) => {
     const tasks = await getAll(req.query.search);
-    // const tasks = await getAll({});
     res.render('taskPage', { tasks });
 });
 
@@ -29,25 +28,27 @@ router.post('/create', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id/details', async (req, res) => {
     let task = await getOne(req.params.id);
 
     if (task) {
         res.render('details', { task });
     } else {
-        res.redirect('404');
+        res.redirect('/404');
     }
 });
 
-// router.get('/:id/delete', async (req, res) => {
-//     try {
-//         let task = await getOne(req.params.id);
-//         await remove(req.params.id);
-//         res.redirect('/tasks');
+router.get('/:id/delete', async (req, res) => {
+    try {
+        await remove(req.params.id);
+        res.redirect('/');
+    } catch (error) {
+        res.redirect('/error-page');
+    }
+});
 
-//     } catch (error) {
-//         res.render('delete', { error });
-//     }
-// });
+router.all('*', (req, res) => {
+    res.render('404', { title: 'Page Not Found' });
+});
 
 module.exports = router;

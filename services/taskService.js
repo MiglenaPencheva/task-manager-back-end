@@ -32,14 +32,14 @@ async function create(data, userId) {
 //     return existing.save();
 // }
 
-// async function remove(taskId) {
-//     return await Task.deleteOne({ _id: taskId });
-// }
+async function remove(taskId) {
+    return await Task.deleteOne({ _id: taskId });
+}
 
 module.exports = {
     getAll,
     getOne,
     create,
     // edit,
-    // remove,
+    remove,
 };
