@@ -7,6 +7,36 @@ async function getAll(query) {
         .lean();
 }
 
+async function getAllToDo(query) {
+    return await Task
+        .find({
+            isCompleted: false,
+            content: { $regex: query || '', $options: 'i' }
+        })
+        .sort({ 'created_at': 1 })
+        .lean();
+}
+
+async function getAllCompleted(query) {
+    return await Task
+        .find({
+            isCompleted: true,
+            content: { $regex: query || '', $options: 'i' }
+        })
+        .sort({ 'created_at': 1 })
+        .lean();
+}
+
+async function getMine(query, userId) {
+    return await Task
+        .find({
+            creator: userId,
+            content: { $regex: query || '', $options: 'i' }
+        })
+        .sort({ 'created_at': 1 })
+        .lean();
+}
+
 async function getOne(taskId) {
     const task = await Task.findById(taskId).lean();
     if (task) {
@@ -36,6 +66,9 @@ async function remove(taskId) {
 
 module.exports = {
     getAll,
+    getAllToDo,
+    getAllCompleted,
+    getMine,
     getOne,
     create,
     edit,

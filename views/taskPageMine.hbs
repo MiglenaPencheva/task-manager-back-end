@@ -1,0 +1,27 @@
+<main>
+
+    <h1 class="text-center">Всички мои задачи</h1>
+    
+    {{#if myTasks}}
+
+    <h4 class="text-center">{{myTasks.length}} задачи, създадени от {{user.username}}</h4>
+
+    {{> search}}
+
+    <div class="container mt-3">
+        <div class="row ">
+            <div class="card-deck d-flex justify-content-center">
+
+                {{#each myTasks}}
+                    {{> task}}
+                {{/each}}
+
+            </div>
+        </div>
+    </div>
+
+    {{else}}
+        <h3 class="text-center">Няма мои задачи...</h3>
+    {{/if}}
+
+</main>

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, create, getOne, edit, remove } = require('../services/taskService');
+const { getAll, getAllCompleted, getAllToDo, getMine, create, getOne, edit, remove  } = require('../services/taskService');
 
 router.get('/', async (req, res) => {
     const tasks = await getAll(req.query.search);
@@ -7,15 +7,18 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/archive', async (req, res) => {
-    const tasks = await getAll(req.query.search);
-    const completed = tasks.filter(x => x.isCompleted == true);
+    const completed = await getAllCompleted(req.query.search);
     res.render('taskPageArchive', { completed });
 });
 
 router.get('/to-do', async (req, res) => {
-    const tasks = await getAll(req.query.search);
-    const toDoList = tasks.filter(x => x.isCompleted == false);
+    const toDoList = await getAllToDo(req.query.search);
     res.render('taskPageToDo', { toDoList });
+});
+
+router.get('/my-tasks', async (req, res) => {
+    const myTasks = await getMine(req.query.search);
+    res.render('taskPageMine', { myTasks });
 });
 
 router.get('/create', (req, res) => {
