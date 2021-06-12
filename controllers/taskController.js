@@ -3,9 +3,20 @@ const { getAll, create, getOne, edit, remove } = require('../services/taskServic
 
 router.get('/', async (req, res) => {
     const tasks = await getAll(req.query.search);
-    res.render('taskPage', { tasks });
+    res.render('taskPageAll', { tasks });
 });
 
+router.get('/archive', async (req, res) => {
+    const tasks = await getAll(req.query.search);
+    const completed = tasks.filter(x => x.isCompleted == true);
+    res.render('taskPageArchive', { completed });
+});
+
+router.get('/to-do', async (req, res) => {
+    const tasks = await getAll(req.query.search);
+    const toDoList = tasks.filter(x => x.isCompleted == false);
+    res.render('taskPageToDo', { toDoList });
+});
 
 router.get('/create', (req, res) => {
     res.render('create', { title: 'Create Task' });
@@ -13,10 +24,12 @@ router.get('/create', (req, res) => {
 
 router.post('/create', async (req, res) => {
     if (!req.body) throw new Error({ message: 'Content is required' });
-    const data = req.body;
+    const task = req.body;
+    task.isCompleted = false;
+    task.completor = '';
 
     try {
-        await create(data, req.user._id);
+        await create(task);
         res.redirect('/');
     } catch (error) {
         res.render('create', { error });
@@ -40,7 +53,7 @@ router.get('/:id/complete', async (req, res) => {
         task.completor = req.user._id;
 
         await edit(req.params.id, task);
-        res.redirect(`/`);
+        res.redirect(`/to-do`);
     } catch (error) {
         res.redirect('/404');
     }
@@ -49,7 +62,7 @@ router.get('/:id/complete', async (req, res) => {
 router.get('/:id/delete', async (req, res) => {
     try {
         await remove(req.params.id);
-        res.redirect('/');
+        res.redirect('/to-do');
     } catch (error) {
         res.redirect('/404');
     }

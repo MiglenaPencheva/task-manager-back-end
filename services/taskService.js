@@ -16,11 +16,8 @@ async function getOne(taskId) {
     }
 }
 
-async function create(data, userId) {
+async function create(data) {
     let task = new Task(data);
-    task.creator = userId;
-    task.isCompleted = false;
-    task.completor = '';
     return task.save();
 }
 

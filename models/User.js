@@ -13,11 +13,7 @@ const userScheme = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-    },
-    createdTasks: [{
-        type: mongoose.Types.ObjectId,
-        ref: "Task"
-    }]
+    }
 });
 
 userScheme.pre('save', async function (next) {
