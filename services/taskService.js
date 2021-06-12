@@ -20,17 +20,18 @@ async function create(data, userId) {
     let task = new Task(data);
     task.creator = userId;
     task.isCompleted = false;
+    task.completor = '';
     return task.save();
 }
 
-// async function edit(taskId, task) {
-//     const existing = await Task.findById(taskId);
-//     if (!existing) {
-//         throw new ReferenceError('No such ID in database');
-//     }
-//     Object.assign(existing, cube)
-//     return existing.save();
-// }
+async function edit(taskId, completedTask) {
+    const existing = await Task.findById(taskId);
+    if (!existing) {
+        throw new ReferenceError('No such ID in database');
+    }
+    Object.assign(existing, completedTask)
+    return existing.save();
+}
 
 async function remove(taskId) {
     return await Task.deleteOne({ _id: taskId });
@@ -40,6 +41,6 @@ module.exports = {
     getAll,
     getOne,
     create,
-    // edit,
+    edit,
     remove,
 };

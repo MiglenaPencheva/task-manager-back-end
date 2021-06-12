@@ -9,10 +9,9 @@ const taskScheme = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: 'User',
     },
-    // completor: {
-    //     type: mongoose.Types.ObjectId,
-    //     ref: 'User',
-    // },
+    completor: {
+        type: String,
+    },
     isCompleted: Boolean,
 },
     {

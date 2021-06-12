@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, create, getOne, remove } = require('../services/taskService');
+const { getAll, create, getOne, edit, remove } = require('../services/taskService');
 
 router.get('/', async (req, res) => {
     const tasks = await getAll(req.query.search);
@@ -13,12 +13,7 @@ router.get('/create', (req, res) => {
 
 router.post('/create', async (req, res) => {
     if (!req.body) throw new Error({ message: 'Content is required' });
-
-    let { content } = req.body;
-
-    const data = { content }
-
-    console.log(data);
+    const data = req.body;
 
     try {
         await create(data, req.user._id);
@@ -38,14 +33,28 @@ router.get('/:id/details', async (req, res) => {
     }
 });
 
+router.get('/:id/complete', async (req, res) => {
+    try {
+        const task = await getOne(req.params.id);
+        task.isCompleted = true;
+        task.completor = req.user._id;
+
+        await edit(req.params.id, task);
+        res.redirect(`/`);
+    } catch (error) {
+        res.redirect('/404');
+    }
+});
+
 router.get('/:id/delete', async (req, res) => {
     try {
         await remove(req.params.id);
         res.redirect('/');
     } catch (error) {
-        res.redirect('/error-page');
+        res.redirect('/404');
     }
 });
+
 
 router.all('*', (req, res) => {
     res.render('404', { title: 'Page Not Found' });
