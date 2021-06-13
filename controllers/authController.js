@@ -3,6 +3,10 @@ const { register, login } = require('../services/authService');
 const { COOKIE_NAME } = require('../config/config');
 const { isLogged, isGuest } = require('../middlewares/authMiddleware');
 
+router.get('/', isGuest, (req, res) => {
+    res.render('guestPage');
+})
+
 router.get('/login', isGuest, (req, res) => {
     res.render('login');
 });
@@ -49,7 +53,7 @@ router.post('/register', isGuest, async (req, res) => {
 
 router.get('/logout', isLogged, (req, res) => {
     res.clearCookie(COOKIE_NAME);
-    res.redirect('/');
+    res.redirect('/auth');
 });
 
 module.exports = router;

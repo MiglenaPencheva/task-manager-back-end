@@ -18,12 +18,12 @@ function auth(req, res, next) {
 }
 
 function isLogged(req, res, next) {
-    if (!req.user) return res.redirect('/auth/login');
+    if (!req.user) return res.redirect('/auth');
     next();
 }
 
 function isGuest(req, res, next) {  
-    if (req.user) return res.redirect('/'); 
+    if (req.user) return res.redirect('/to-do'); 
     next();
 }
 

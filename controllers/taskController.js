@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { getAll, getAllCompleted, getAllToDo, getMine, create, getOne, edit, remove } = require('../services/taskService');
 const { getUserById } = require('../services/authService');
 
-router.get('/', async (req, res) => {
+router.get('/all', async (req, res) => {
     const tasks = await getAll(req.query.search);
     res.render('taskPageAll', { tasks });
 });
@@ -36,7 +36,7 @@ router.post('/create', async (req, res) => {
 
     try {
         await create(task);
-        res.redirect('/');
+        res.redirect('/to-do');
     } catch (error) {
         res.render('create', { error });
     }
@@ -70,7 +70,7 @@ router.get('/:id/complete', async (req, res) => {
         task.completor = req.user._id;
 
         await edit(req.params.id, task);
-        res.redirect(`/to-do`);
+        res.redirect('/to-do');
     } catch (error) {
         res.redirect('/404');
     }

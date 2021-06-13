@@ -16,28 +16,22 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a class="navbar-brand" href="/to-do">Задачи за изпълнение</a>
-            <a class="navbar-brand" href="/archive">Завършени задачи</a>
-            <a class="navbar-brand" href="/">Всички задачи</a>
-            <a class="navbar-brand" href="/my-tasks">Моите задачи</a>
 
-            <a href="/create" class="btn btn-warning ">Създай нова задача</a>
+            {{#if user}}
 
-            <ul class="navbar-nav ml-auto">
+            <p class="p-greeting">Здравей, {{user.username}}!</p>
+            <a href="/auth/logout" class="nav-link">Изход от профила</a>
 
-                {{#if user}}
+            <section class="navbar-nav ml-auto">
+                <a class="navbar-brand" href="/to-do">Задачи за изпълнение</a>
+                <a class="navbar-brand" href="/archive">Завършени задачи</a>
+                <a class="navbar-brand" href="/all">Всички задачи</a>
+                <a class="navbar-brand" href="/my-tasks">Моите задачи</a>
+                <a href="/create" class="btn btn-warning ">Създай нова задача</a>
+            </section>
+            
+            {{/if}}
 
-                <li class="nav-item"><a class="nav-link" href="/">Здравей, {{user.username}}</a></li>
-                <li class="nav-item"><a class="nav-link" href="/auth/logout">Изход от профила</a></li>
-
-                {{else}}
-
-                <li class="nav-item"><a class="nav-link" href="/auth/login">Влез в профила си</a></li>
-                <li class="nav-item"><a class="nav-link" href="/auth/register">Регистрирай се</a></li>
-
-                {{/if}}
-
-            </ul>
         </nav>
 
         <main>
