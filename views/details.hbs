@@ -6,7 +6,12 @@
                 <p>{{task.content}}</p>
 
                 <a class="btn btn-danger" href="/{{task._id}}/delete">Изтрий</a>
-                <a class="btn btn-warning" href="/{{task._id}}/complete">Завърши</a>
+
+                {{#if task.isCompleted}}
+                    <p>Завършена на {{task.date}} {{task.hour}} от {{task.completor}}</p>
+                {{else}}
+                    <a class="btn btn-warning" href="/{{task._id}}/complete">Завърши</a>
+                {{/if}}
             </div>
         </div>
     </div>

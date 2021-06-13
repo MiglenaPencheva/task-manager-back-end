@@ -16,7 +16,7 @@ router.post('/login', isGuest, async (req, res) => {
         
         let token = await login(username, password);
         res.cookie(COOKIE_NAME, token, { httpOnly: true });
-        res.redirect('/');
+        res.redirect('/to-do');
 
     } catch (error) {
         return res.render('login', { error });
@@ -40,7 +40,7 @@ router.post('/register', isGuest, async (req, res) => {
 
         let token = await login(username, password);
         res.cookie(COOKIE_NAME, token, { httpOnly: true });
-        res.redirect('/');
+        res.redirect('/to-do');
 
     } catch (error) {
         return res.render('register', { error });

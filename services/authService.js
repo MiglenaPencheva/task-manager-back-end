@@ -23,7 +23,17 @@ async function login(username, password) {
     return token;
 }
 
+async function getUserById(id) {
+    const user = await User.findById(id);
+    if (user) {
+        return user;
+    } else {
+        return undefined;
+    }
+}
+
 module.exports = {
     register,
-    login
+    login,
+    getUserById
 };

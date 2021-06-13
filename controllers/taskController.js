@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { getAll, getAllCompleted, getAllToDo, getMine, create, getOne, edit, remove  } = require('../services/taskService');
+const { getAll, getAllCompleted, getAllToDo, getMine, create, getOne, edit, remove } = require('../services/taskService');
+const { getUserById } = require('../services/authService');
 
 router.get('/', async (req, res) => {
     const tasks = await getAll(req.query.search);
@@ -17,7 +18,8 @@ router.get('/to-do', async (req, res) => {
 });
 
 router.get('/my-tasks', async (req, res) => {
-    const myTasks = await getMine(req.query.search);
+    console.log(req.userId);
+    const myTasks = await getMine(req.query.search, req.user._id);
     res.render('taskPageMine', { myTasks });
 });
 
@@ -28,6 +30,7 @@ router.get('/create', (req, res) => {
 router.post('/create', async (req, res) => {
     if (!req.body) throw new Error({ message: 'Content is required' });
     const task = req.body;
+    task.creator = req.user._id;
     task.isCompleted = false;
     task.completor = '';
 
@@ -40,11 +43,22 @@ router.post('/create', async (req, res) => {
 });
 
 router.get('/:id/details', async (req, res) => {
-    let task = await getOne(req.params.id);
+    try {
+        let task = await getOne(req.params.id);
 
-    if (task) {
+        if (task.completor) {
+            let user = await getUserById(task.completor);
+            task.completor = user.username;
+
+            let completedAt = task.updated_at;
+            let time = completedAt.toString().split(' ');
+            task.date = `${time[2]} ${time[1]} ${time[3]}`;
+            task.hour = time[4].slice(0, 5);
+        }
+
         res.render('details', { task });
-    } else {
+
+    } catch (error) {
         res.redirect('/404');
     }
 });
