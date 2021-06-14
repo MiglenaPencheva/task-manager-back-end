@@ -15,21 +15,26 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <nav>
 
             {{#if user}}
 
-            <p class="p-greeting">Здравей, {{user.username}}!</p>
-            <a href="/auth/logout" class="nav-link">Изход от профила</a>
-
-            <section class="navbar-nav ml-auto">
-                <a class="navbar-brand" href="/to-do">Задачи за изпълнение</a>
-                <a class="navbar-brand" href="/archive">Завършени задачи</a>
-                <a class="navbar-brand" href="/all">Всички задачи</a>
-                <a class="navbar-brand" href="/my-tasks">Моите задачи</a>
-                <a href="/create" class="btn btn-warning ">Създай нова задача</a>
+            <section class="header">
+                <h1 class="title">Задачи</h1>
+                <div class="header-right">
+                    <h3 class="greeting">Здравей, {{user.username}}!</h3>
+                    <a href="/auth/logout" class="navbar-link">Изход от профила</a>
+                </div>
             </section>
-            
+
+            <section class="navbar-nav">
+                <a class="navbar-link" href="/to-do">Задачи за изпълнение</a>
+                <a class="navbar-link" href="/archive">Завършени задачи</a>
+                <a class="navbar-link" href="/all">Всички задачи</a>
+                <a class="navbar-link" href="/my-tasks">Моите задачи</a>
+            </section>
+                <a href="/create" class="btn btn-create">Създай нова задача</a>
+
             {{/if}}
 
         </nav>

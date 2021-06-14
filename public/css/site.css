@@ -1,3 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color:rgb(131, 182, 178)
+}
+
+div.container {
+    display:inline-block;
+    width: 75%;
+    position: relative;
+    text-align: center;
+}
+
+.header {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    background-color: #d6f3f2;
+    border-radius: 8px;
+}
+
+.title {
+    margin: 0px;
+    padding-left: 30px;
+    font-stretch: extra-expanded;
+    font-size: 40px;
+    font-style: italic;
+    color:rgb(157, 209, 203);
+    font-variant-caps: all-petite-caps;
+    position:relative;
+    letter-spacing: 8px;
+    text-shadow: 2px 2px 5px;
+}
+
+.header-right {
+    display: inline-block;
+}
+
+.greeting {
+    
+}
+
+nav {
+    position: relative;
+}
+
+.navbar-nav {
+    margin: auto;
+    float: none;
+    position: relative;
+    border: none;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 10px;
+    float: none;
+}
+
+.navbar-link {
+    padding: 0px 30px;
+
+}
+
+h1 {
+    text-align: center;
+    color: rgb(103, 139, 136);
+}
+
+h3 {
+    text-align: center;
+    color: rgb(75, 121, 118);
+}
+
+h4 {
+    text-align: center;
+    color: rgb(139, 184, 181);
+    margin: 0px;
+}
+
+.search {
+    position: relative;
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 12px;
+    border-radius: 8px;
+    background: #82b8b1;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #d3eeed; /* Green */
+    color: rgb(108, 161, 152);
+}
+
+.btn-create {
+    width: 30%;
+}
+
+div.task {
+    display: inline-block;
+    border: 1px solid #2b415433;
+    background: white;
+    width: 23%;
+    vertical-align: top;
+}
+
+div.task:hover {
+    background: #607588;
+    color: white;
+}
+
 .card {
     min-width: 18rem;
     max-width: 18rem;
@@ -26,7 +149,7 @@
 }
 
 .notifications {
-    background-color: rgb(234, 21, 55);
+    background-color: rgb(255, 158, 158);
     margin: 0 auto;
     text-align: center;
     padding: 1%;
@@ -45,6 +168,6 @@ a {
     color: rgb(94, 126, 120)!important;
 }
 
-footer a {
-    color: blue!important;
+footer {
+    color: rgb(121, 175, 145)!important;
 }
