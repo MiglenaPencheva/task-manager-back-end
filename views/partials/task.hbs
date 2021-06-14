@@ -1,8 +1,17 @@
-<div class="card">
-    <div class="card-body">
-        <h4 class="card-content">{{content}}</h4>
-    </div>
-    <div class="card-footer">
-        <a href="/{{_id}}/details"><button type="button" class="btn card-btn">>></button></a>
-    </div>
-</div>
+{{#if isCompleted}}
+
+    <a class="card-completed" href="/{{_id}}/details">
+        <div>25 септ 16:00</div>
+        <div>{{content}}</div>
+        <div>завършена</div>
+    </a>
+
+{{else}}
+
+    <a class="card" href="/{{_id}}/details">
+        <div>25 септ 16:00</div>
+        <div>{{content}}</div>
+        <div>завърши</div>
+    </a>
+        
+{{/if}}
