@@ -21,16 +21,15 @@ main {
 header {
     display: grid;
     grid-template-columns: 10% auto 10%;
-    /* grid-gap: 10px; */
     margin: 0;
-    padding-bottom: 10px;
+    padding: 0;
     background-color: #E4F9F9;
     border-radius: 10px 10px 0 0;
 }
 header .home {
-    margin: 15px 10px 15px 30px;
-    width: max-content;
-    padding: 10px;
+    margin: 30px 20px 20px 30px;
+    padding: 10px 10px 8px 10px;
+    width: 50px;
     text-align: center;
     font-size: 16px;
     border-radius: 10px;
@@ -46,7 +45,7 @@ header .home:hover {
     background-color: #ffffff;
 }
 header > h1 {
-    margin: 0;
+    margin: 15px 0 0 0;
     padding: 10px;
     text-align: center;
     font-size: 35px;
@@ -63,8 +62,8 @@ header .dropdown {
 header .dropdown-content {
     display: none;
     position: absolute;
-    top: 45px;
-    right: 45px;
+    top: 30px;
+    right: 30px;
     background-color: #f4fafa;
     min-width: max-content;
     border-radius: 10px;
@@ -73,7 +72,7 @@ header .dropdown-content {
 }
 header .dropdown-content:hover .dropdown-content {
     display: block;
-  }
+}
 header .dropdown p {
     margin: 18px 0 0 0;
     padding: 10px;
@@ -82,20 +81,17 @@ header .dropdown p {
 }
 header .dropbtn {
     border-width: 0px;
-    margin: 15px 30px 15px 10px;;
-    position:absolute;
-    width: max-content;
-    margin: 15px;
-    padding: 10px;
+    margin: 30px 30px 20px 10px;
+    padding: 12px 10px 10px 10px;
     width: 50px;
     text-align: center;
+    position: absolute;
     font-size: 16px;
     border-radius: 10px;
     background: #AFE4E4;
     color: #f4fafa;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
-
 header .dropdown-content a {
     margin: 10px;
     padding: 10px 20px;
@@ -103,16 +99,12 @@ header .dropdown-content a {
     color: #607588;
     text-align: center;
     display: block;
-}
-  
+}  
 header .dropdown-content a:hover {
     background-color: #E4F9F9;
     color: #3B4444;
     font-style: italic;
-}
-
-
-  
+} 
 header .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -129,13 +121,12 @@ header .dropdown:hover .dropdown-content {
     margin-bottom: 10px;
 }
 form .input-searh {
-    padding: 10px;
-    margin: 0 5px 0 30px;
+    padding: 10px 10px 12px 20px;
+    margin: 0 10px 0 30px;
     border: 1px solid #AFE4E4;
     -webkit-transition: 0.5s;
     transition: 0.3s;
     outline: none;
-    /* background-image: url('searchicon.png'); */
     font-size: 16px;
     border-radius: 10px;
     text-align: left;
@@ -149,6 +140,7 @@ input[type=text]:focus {
     border-width: 0px;
     margin: 0;
     padding: 0;
+    width: 50px;
     text-align: center;
     font-size: 16px;
     border-radius: 10px;
@@ -191,6 +183,12 @@ h4 {
     text-align: center;
     margin: 0;
     padding: 0;
+    color: #73a5a5;
+}
+h3 {
+    text-align: center;
+    margin: 0;
+    padding: 50px;
     color: #73a5a5;
 }
 

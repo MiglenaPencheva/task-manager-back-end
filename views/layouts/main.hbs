@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>{{title}}</title>
     <link href="/static/css/site.css" type="text/css" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     {{!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,11 +20,11 @@
         {{#if user}}
 
         <header>
-            <a class="home" href="/to-do">home</a>
+            <a class="home" href="/to-do"><i class='fas fa-home' style='font-size:24px'></i></a>
             <h1>Офис помощник</h1>
 
             <div class="dropdown">
-                <button class="dropbtn">▼</button>
+                <button class="dropbtn"><i class='fas fa-chevron-down'></i></button>
                 <div class="dropdown-content">
                     <p>Здравей, <b>{{user.username}}</b>!</p>
                     <a href="/auth/logout">Изход от профила</a>
