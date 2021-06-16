@@ -1,29 +1,21 @@
 <main>
 
-    {{!-- <h1 class="text-center">Всички задачи</h1> --}}
-
     {{#if tasks}}
 
     <h4 class="text-center">{{tasks.length}} задачи</h4>
 
-    {{!-- <section class="searc-create">
-        {{> search}} {{> create}}
-    </section> --}}
 
-    <div class="container mt-3">
-        <div class="row ">
-            <div class="card-deck d-flex justify-content-center">
+    <div class="cards">
 
-                {{#each tasks}}
-                {{> task}}
-                {{/each}}
+        {{#each tasks}}
+            {{> task}}
+        {{/each}}
 
-            </div>
-        </div>
     </div>
 
+
     {{else}}
-    <h3 class="text-center">Няма задачи...</h3>
+        <h4>Няма задачи...</h4=>
     {{/if}}
 
 </main>

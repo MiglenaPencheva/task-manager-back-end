@@ -10,59 +10,118 @@ body {
     max-width: 900px;
 }
 main {
-    background-color: #f4fafa;
+    background-color: #E4F9F9;
+    min-height: 444px;
 }
 
 /* div.container {
-    display:inline-block;
-    width: 100%;
-    position: relative;
-    text-align: center;
     color:#E4F9F9;
 } */
 
 header {
     display: grid;
-    grid-template-columns: auto 30%;
-    grid-gap: 10px;
+    grid-template-columns: 10% auto 10%;
+    /* grid-gap: 10px; */
     margin: 0;
     padding-bottom: 10px;
     background-color: #E4F9F9;
-    border-radius: 8px 8px 0 0;
-    color: #607588
+    border-radius: 10px 10px 0 0;
+}
+header .home {
+    margin: 15px 10px 15px 30px;
+    width: max-content;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    background: #AFE4E4;
+    color: #f4fafa;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+}
+header .home:hover {
+    color: #607588;
+    font-size:110%;
+    background-color: #ffffff;
 }
 header > h1 {
-    margin: auto auto auto 90px;
-    padding: 0;
+    margin: 0;
+    padding: 10px;
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
     font-style: italic;
-    letter-spacing: 15px;
+    letter-spacing: 8px;
+    color: #607588;
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
-header > section {
-    margin-top: 10px;
+
+header .dropdown {
+    position: relative;
+    display: inline-block;
+}
+header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 45px;
+    background-color: #f4fafa;
+    min-width: max-content;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+header .dropdown-content:hover .dropdown-content {
+    display: block;
+  }
+header .dropdown p {
+    margin: 18px 0 0 0;
+    padding: 10px;
     text-align: center;
-    color: #7d8a8a;
+    color: #607588;
 }
-header > section p {
-    margin: 0;
-    padding: 0;
+header .dropbtn {
+    border-width: 0px;
+    margin: 15px 30px 15px 10px;;
+    position:absolute;
+    width: max-content;
+    margin: 15px;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    background: #AFE4E4;
+    color: #f4fafa;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
-header > section a {
-    color: #9fadad;
-    text-decoration-style: dashed;
+
+header .dropdown-content a {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #607588;
+    text-align: center;
+    display: block;
 }
-header > section a:hover {
-    text-decoration: underline;
-    color: #607588
+  
+header .dropdown-content a:hover {
+    background-color: #E4F9F9;
+    color: #3B4444;
+    font-style: italic;
+}
+
+
+  
+header .dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .search-create {
     display: grid;
     grid-template-columns: 50% 50%;
     background-color: #E4F9F9;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 .search-create form.search {
     display: grid;
@@ -87,6 +146,7 @@ input[type=text]:focus {
     border: 1px solid #607588;
   }
 .btn-search {
+    border-width: 0px;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -95,6 +155,8 @@ input[type=text]:focus {
     background: #AFE4E4;
     color: #f4fafa;
     cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
 }
 .btn-search:hover {
     background-color: #f4fafa;
@@ -112,6 +174,8 @@ input[type=text]:focus {
     background: #AFE4E4;
     color: #f4fafa;
     cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
 }
 .create:hover {
     color: #607588;
@@ -121,62 +185,47 @@ input[type=text]:focus {
 }
 
 
-.navbar {
-    width: 100%;
-    margin: 0px;
-    padding: 10px;
-    text-align: center;
-    background: #f4fafa;
-}
-a.navbar-link {
-    margin: 10px;
-    padding: 10px 30px;
-    border-radius: 10px 10px 0 0;
-    color: #a1b9b9;
-}
-a.navbar-link:hover {
-    color: #3B4444;
-}
-/* a.navbar-link:not(.active) {
-    background-color: #f4fafa;
-    color: #a8c0c0
-} */
-a.navbar-link:hover:not(.active) {
-    background-color: #f4fafa;
-    color: #3B4444
-}
 
-a.navbar-link active {
-    background-color: #E4F9F9;
-    color: #3B4444;
-    font-size:120%;
-}
 
 h4 {
     text-align: center;
     margin: 0;
-    padding: 10px;
-    color: #336161;
-    background-color: #f4fafa;
-
+    padding: 0;
+    color: #73a5a5;
 }
 
+.cards {
+    margin: 0;
+    padding: 0 15px 15px 15px;
+}
 .card {
     display: grid;
     grid-template-columns: 15% auto 12%;
     grid-gap: 10px;
-    margin: 10px 10px 0 10px;
+    margin: 15px;
     padding: 10px;
     background-color: #AFE4E4;
     border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
-.card > div {
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+/* html body div.container main main div.cards a.card div */
+.card div {
     border-radius: 8px;
     text-align: left;
     color: #336161;
     background-color:#E4F9F9;
     padding: 10px 10px;
     font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* a.card:nth-child(1) > div:nth-child(2) */
+.card div > div:nth-child(1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .card-completed {
     display: grid;
@@ -188,6 +237,10 @@ h4 {
     border-radius: 10px;
     color: #3f5757;
     text-decoration-style: dashed;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.card-completed:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .card-completed > div {
     border-radius: 8px;
@@ -196,15 +249,17 @@ h4 {
     background-color:#f4fafa;
     padding: 10px 10px;
     font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 a:link {
     text-decoration: none;
 }
 
-.btn-group {
+/* .btn-group {
     margin-right: 20px;
-}
+} */
 
 .notifications {
     background-color: rgb(255, 158, 158);
@@ -227,5 +282,5 @@ footer {
     padding: 20px;
     border-radius: 0 0 10px 10px;
     color: #687979;
-    background-color: #f4fafa;
+    background-color: #E4F9F9;
 }

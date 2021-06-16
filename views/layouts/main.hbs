@@ -15,27 +15,34 @@
 
 <body>
     <div class="container">
-        
+
         {{#if user}}
 
         <header>
+            <a class="home" href="/to-do">home</a>
             <h1>Офис помощник</h1>
-            <section class="header-right">
-                <p>Здравей, <b>{{user.username}}</b>!</p>
-                <a href="/auth/logout">Изход от профила</a>  
-            </section>
+
+            <div class="dropdown">
+                <button class="dropbtn">▼</button>
+                <div class="dropdown-content">
+                    <p>Здравей, <b>{{user.username}}</b>!</p>
+                    <a href="/auth/logout">Изход от профила</a>
+                    <a href="/my-tasks">Моите задачи</a>
+                    <a href="/all">Всички задачи</a>
+                    <a href="/archive">Завършени задачи</a>
+                    <a href="/to-do">Задачи за изпълнение</a>
+                </div>
+            </div>
+
         </header>
 
         <section class="search-create">
-            {{> search}} 
+            {{> search}}
             <a href="/create" class="create">Създай нова задача</a>
         </section>
 
         <nav class="navbar">
-            <a class="navbar-link" href="/to-do">Задачи за изпълнение</a>
-            <a class="navbar-link" href="/archive">Завършени задачи</a>
-            <a class="navbar-link" href="/all">Всички задачи</a>
-            <a class="navbar-link" href="/my-tasks">Моите задачи</a>
+            
         </nav>
 
         {{/if}}
