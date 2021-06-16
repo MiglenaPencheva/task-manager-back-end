@@ -1,18 +1,9 @@
 <main>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <h3 class="my-3">Задача</h3>
-                <p>{{task.content}}</p>
 
-                <a class="btn btn-danger" href="/{{task._id}}/delete">Изтрий</a>
-
-                {{#if task.isCompleted}}
-                    <p>Завършена на {{task.date}} {{task.hour}} от {{task.completor}}</p>
-                {{else}}
-                    <a class="btn btn-warning" href="/{{task._id}}/complete">Завърши</a>
-                {{/if}}
-            </div>
-        </div>
-    </div>
+    {{#if task.isCompleted}}
+        {{> taskCompletedDetails}}            
+    {{else}}
+        {{> taskToDoDetails}}
+    {{/if}}
+            
 </main>

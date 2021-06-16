@@ -209,7 +209,6 @@ h3 {
 .card:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-/* html body div.container main main div.cards a.card div */
 .card div {
     border-radius: 8px;
     text-align: left;
@@ -217,11 +216,6 @@ h3 {
     background-color:#E4F9F9;
     padding: 10px 10px;
     font-size: 16px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-/* a.card:nth-child(1) > div:nth-child(2) */
-.card div > div:nth-child(1) {
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -255,9 +249,47 @@ a:link {
     text-decoration: none;
 }
 
-/* .btn-group {
-    margin-right: 20px;
-} */
+.task-to-do {
+    margin: 50px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid #AFE4E4;
+    position: static;
+    height: max-content;
+    color: #336161;
+}
+.task-created {
+    margin: 0px;
+    padding: 10px;
+    border: 3px solid #AFE4E4;
+    border-radius: 10px;
+    position:absolute;
+    text-align: center;
+    max-width: max-content;
+}
+.task-content {
+    padding: 40px;
+    font-size: 20px;
+}
+.task-to-do > a {
+    margin: 30px;
+    padding: 10px 16px 10px 16px;
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    background: #AFE4E4;
+    color: #f4fafa;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+}
+.task-completed {
+
+}
+.task-completed-at {
+
+}
 
 .notifications {
     background-color: rgb(255, 158, 158);

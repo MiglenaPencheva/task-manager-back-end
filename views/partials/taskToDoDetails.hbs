@@ -1,5 +1,7 @@
 <div class="task-to-do">
-    <p class="card-created">5 юни</p>
-    <p class="card-content">{{content}}</p>
-    <a href="/{{_id}}/details"><button type="button" class="card-btn">>></button></a>
+    <p class="task-created">Създадена на 5 юни 15:00 от Мега</p>
+    <p class="task-content">{{task.content}}</p>
+    <a href="/{{_id}}/delete"><i class='fas fa-trash-alt'></i></a>
+    <a href="/{{_id}}/complete"><i class='fas fa-check'></i></a>
+
 </div>
