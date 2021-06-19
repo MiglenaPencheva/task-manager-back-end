@@ -14,9 +14,9 @@ main {
     min-height: 444px;
 }
 
-/* div.container {
+div.container {
     color:#E4F9F9;
-} */
+}
 
 header {
     display: grid;
@@ -179,17 +179,25 @@ input[type=text]:focus {
 
 
 
-h4 {
+h2 {
     text-align: center;
     margin: 0;
-    padding: 0;
+    padding: 50px;
     color: #73a5a5;
 }
 h3 {
     text-align: center;
     margin: 0;
-    padding: 50px;
+    padding: 10px;
     color: #73a5a5;
+}
+h4 {
+    text-align: center;
+    margin: 20px;
+    padding: 0;
+    color: #97c0c0;
+    font-style: italic;
+    font-size: 14px;
 }
 
 .cards {
@@ -250,33 +258,32 @@ a:link {
 }
 
 .task-to-do {
-    margin: 50px;
-    padding: 20px;
+    margin: auto;
+    padding: 30px;
     border-radius: 20px;
     border: 3px solid #AFE4E4;
-    position: static;
-    height: max-content;
+    width: 90%;
+    min-height: 200px;
+    max-height: max-content;
     color: #336161;
+    text-align: left;
 }
-.task-created {
-    margin: 0px;
-    padding: 10px;
-    border: 3px solid #AFE4E4;
-    border-radius: 10px;
-    position:absolute;
-    text-align: center;
-    max-width: max-content;
-}
-.task-content {
-    padding: 40px;
-    font-size: 20px;
-}
-.task-to-do > a {
+.task-actions {
     margin: 30px;
-    padding: 10px 16px 10px 16px;
-    width: 50px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0;
+    padding: 0;
+    background-color: #E4F9F9;
+    border-radius: 10px 10px 0 0;
     text-align: center;
-    font-size: 18px;
+}
+.fa-trash-alt {
+    margin: 30px 0 0 0;
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
     border-radius: 10px;
     background: #AFE4E4;
     color: #f4fafa;
@@ -284,12 +291,44 @@ a:link {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     transition-duration: 0.4s;
 }
-.task-completed {
-
+.fa-trash-alt:hover {
+    color: #607588;
+    font-size:110%;
+    background-color: #ffffff;
 }
-.task-completed-at {
-
+.fa-trash-alt > p {
+    margin: 15px 0 0 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 2px;
 }
+.fa-check {
+    margin: 30px 0 0 0;
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #AFE4E4;
+    color: #f4fafa;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+}
+.fa-check:hover {
+    color: #607588;
+    font-size:110%;
+    background-color: #ffffff;
+}
+.fa-check > p {
+    margin: 15px 0 0 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 2px;
+}
+
+
 
 .notifications {
     background-color: rgb(255, 158, 158);

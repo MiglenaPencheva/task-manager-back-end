@@ -1,7 +1,20 @@
-<div class="task-to-do">
-    <p class="task-created">Създадена на 5 юни 15:00 от Мега</p>
-    <p class="task-content">{{task.content}}</p>
-    <a href="/{{_id}}/delete"><i class='fas fa-trash-alt'></i></a>
-    <a href="/{{_id}}/complete"><i class='fas fa-check'></i></a>
+<h3></h3>
+<h4>Създадена на <strong>5 юни 15:00</strong> от Мега</h4>
 
+<div class="task-to-do">
+    {{task.content}}
+</div>
+
+<div class="task-actions">
+
+    <a href="/{{_id}}/delete">
+        <i class='fas fa-trash-alt'>
+            <p>Изтрий задачата</p>
+        </i></a>
+
+    <a href="/{{_id}}/complete">
+        <i class='fas fa-check'>
+            <p>Завърши задачата</p>
+        </i></a>
+        
 </div>
