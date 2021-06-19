@@ -1,11 +1,20 @@
-<main>
-    <form class="text-center border border-light p-5" method="POST">
-        <h1>Създай задача</h1>
-        
-        <div class="form-group">
-            <textarea class="form-control" placeholder="Съдържание" name="content"></textarea>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Създай</button>
-    </form>
-</main>
+<h3>Създай задача</h3>
+
+<form class="create-form" method="POST">
+    <textarea type="text" placeholder="Съдържание..." name="content"></textarea>
+</form>
+
+<div class="task-actions">
+
+    <a href="/to-do">
+        <i class='fas fa-times'>
+            <p>Отказ</p>
+        </i></a>
+
+    <a href="/{{_id}}/create">
+        <i class='fas fa-save'>
+            <p>Създай</p>
+        </i>
+    </a>
+       
+</div>

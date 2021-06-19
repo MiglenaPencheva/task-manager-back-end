@@ -176,7 +176,50 @@ input[type=text]:focus {
     background-color: #ffffff;
 }
 
+.create-form {
+    margin: auto;
+    width: 90%;
+}
 
+.create-form textarea[type=text] {
+    margin: 0;
+    padding: 30px;
+    width: 100%;
+    border-radius: 20px;
+    border: 3px solid #AFE4E4;
+    min-height: 200px;
+    max-height: max-content;
+    color: #336161;
+    font-size: 20px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    text-align: top;
+}
+.create-form textarea[type=text]:focus {
+border: 3px solid #607588;
+}
+
+.cancel-btn {
+    margin: 30px 0 0 0;
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3px;
+    border-radius: 10px;
+    background: #AFE4E4;
+    color: #f4fafa;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+}
+
+.cancel-btn:hover {
+    color: #607588;
+    font-size-adjust: inherit;
+    font-size:110%;
+    background-color: #ffffff;
+}
 
 
 h2 {
@@ -280,7 +323,7 @@ a:link {
     border-radius: 10px 10px 0 0;
     text-align: center;
 }
-.fa-trash-alt {
+.fa-trash-alt, .fa-times {
     margin: 30px 0 0 0;
     padding: 30px;
     text-align: center;
@@ -292,19 +335,19 @@ a:link {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     transition-duration: 0.4s;
 }
-.fa-trash-alt:hover {
+.fa-trash-alt:hover, .fa-times:hover {
     color: #607588;
     font-size:110%;
     background-color: #ffffff;
 }
-.fa-trash-alt > p {
+.fa-trash-alt, .fa-times > p {
     margin: 15px 0 0 0;
     padding: 0;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 2px;
 }
-.fa-check {
+.fa-check, .fa-save {
     margin: 30px 0 0 0;
     padding: 30px;
     text-align: center;
@@ -316,12 +359,12 @@ a:link {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     transition-duration: 0.4s;
 }
-.fa-check:hover {
+.fa-check:hover, .fa-save:hover {
     color: #607588;
     font-size:110%;
     background-color: #ffffff;
 }
-.fa-check > p {
+.fa-check, .fa-save > p {
     margin: 15px 0 0 0;
     padding: 0;
     font-size: 16px;
