@@ -1,8 +1,18 @@
-<div class="task-completed">
-    <p class="task-created">Създадена на 5 юни 15:00 от Мега</p>
-    <p class="task-content">{{task.content}}</p>
-    <div>
-        <a href="/{{_id}}/delete"><i class='fas fa-trash-alt'></i></a>
-        <p class="task-completed-at">Завършена на 5 юни 16:30</p>
-    </div>
+<h4>Създадена на <strong>5 юни 15:00</strong> от Мега</h4>
+
+<div class="task-info">
+    {{task.content}}
+</div>
+
+<div class="task-actions">
+
+    <a href="/{{_id}}/delete">
+        <i class='fas fa-trash-alt'>
+            <p>Изтрий задачата</p>
+        </i></a>
+
+    <h4 class="task-completed">
+        Завършена на <strong>6 юни 16:00</strong> от Мега
+    </h4>
+        
 </div>
