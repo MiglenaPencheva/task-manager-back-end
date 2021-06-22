@@ -51,12 +51,14 @@ async function create(data) {
     return task.save();
 }
 
-async function edit(taskId, completedTask) {
+async function complete(taskId, userId) {
     const existing = await Task.findById(taskId);
     if (!existing) {
         throw new ReferenceError('No such ID in database');
     }
-    Object.assign(existing, completedTask)
+    existing.isCompleted = true;
+    existing.completor = userId;
+    // Object.assign(existing, completedTask)
     return existing.save();
 }
 
@@ -71,6 +73,6 @@ module.exports = {
     getMine,
     getOne,
     create,
-    edit,
+    complete,
     remove,
 };

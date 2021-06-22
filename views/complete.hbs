@@ -1,0 +1,23 @@
+{{#with task}}
+<div>
+    <h2>
+        Сигурен ли си, че искаш да завършиш задачата?
+    </h2>
+
+    <div class="task-actions">
+
+        <a href="/{{_id}}/details">
+            <i class='fas fa-trash-alt'>
+                <p>Отказ</p>
+            </i>
+        </a>
+
+        <a href="/{{task._id}}/complete">
+            <i class='fas fa-check'>
+                <p>Завърши задачата</p>
+            </i>
+        </a>
+
+    </div>
+</div>
+        {{/with}}

@@ -5,15 +5,22 @@
 </div>
 
 <div class="task-actions">
-
-    <a href="/{{_id}}/delete">
+    {{!-- <button onclick="confirmation()">
         <i class='fas fa-trash-alt'>
             <p>Изтрий задачата</p>
-        </i></a>
+        </i>
+    </button> --}}
+    
+    <a href="/{{task._id}}/delete">
+        <i class='fas fa-trash-alt'>
+            <p>Изтрий задачата</p>
+        </i>
+    </a>
 
-    <a href="/{{_id}}/complete">
+    <a href="/{{task._id}}/complete">
         <i class='fas fa-check'>
             <p>Завърши задачата</p>
-        </i></a>
+        </i>
+    </a>
         
 </div>

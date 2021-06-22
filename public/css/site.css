@@ -194,14 +194,13 @@ input[type=text]:focus {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-    text-align: top;
 }
 .create-form textarea[type=text]:focus {
 border: 3px solid #607588;
 }
 
 .cancel-btn {
-    margin: 30px 0 0 0;
+    margin: 0;
     padding: 30px;
     text-align: center;
     font-size: 20px;
@@ -213,14 +212,12 @@ border: 3px solid #607588;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     transition-duration: 0.4s;
 }
-
 .cancel-btn:hover {
     color: #607588;
     font-size-adjust: inherit;
     font-size:110%;
     background-color: #ffffff;
 }
-
 
 h2 {
     text-align: center;
@@ -250,7 +247,7 @@ h4 {
 }
 .card {
     display: grid;
-    grid-template-columns: 15% auto 12%;
+    grid-template-columns: 15% auto 5%;
     grid-gap: 10px;
     margin: 15px;
     padding: 10px;
@@ -273,9 +270,9 @@ h4 {
 }
 .card-completed {
     display: grid;
-    grid-template-columns: 15% auto 12%;
+    grid-template-columns: 15% auto 5%;
     grid-gap: 10px;
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
     background-color: #e3eded;
     border-radius: 10px;
@@ -293,8 +290,20 @@ h4 {
     background-color:#f4fafa;
     padding: 10px 10px;
     font-size: 16px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+}
+.fa-check-circle {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 40px;
+    color: #f4fafa;
+}
+.fa-ellipsis-h {
+    margin: 0;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 30px;
+    color: #f4fafa;
 }
 
 a:link {
@@ -313,19 +322,41 @@ a:link {
     text-align: left;
 }
 .task-actions {
-    margin: 30px;
+    margin: 0;
     padding: 30px;
     display: grid;
     grid-template-columns: 50% 50%;
-    margin: 0;
-    padding: 0;
     background-color: #E4F9F9;
     border-radius: 10px 10px 0 0;
     text-align: center;
 }
+.task-actions > button {
+    margin: 0 auto;
+    padding: 0;
+    width: 60%;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    background: #AFE4E4;
+    color: #f4fafa;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.3s;
+}
+.task-actions > button:hover {
+    color: #607588;
+    font-size:110%;
+    background-color: #ffffff;
+}
+.task-actions > a {
+    margin: 0 20px;
+    padding: 0;
+}
 .fa-trash-alt, .fa-times {
-    margin: 30px 0 0 0;
-    padding: 30px;
+    margin: 0;
+    padding: 20px;
+    width: 60%;
     text-align: center;
     font-size: 20px;
     border-radius: 10px;
@@ -340,16 +371,17 @@ a:link {
     font-size:110%;
     background-color: #ffffff;
 }
-.fa-trash-alt, .fa-times > p {
+.fa-trash-alt > p, .fa-times > p {
     margin: 15px 0 0 0;
     padding: 0;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 2px;
 }
-.fa-check, .fa-save {
-    margin: 30px 0 0 0;
-    padding: 30px;
+.fa-check {
+    margin: 0;
+    padding: 20px;
+    width: 60%;
     text-align: center;
     font-size: 20px;
     border-radius: 10px;
@@ -364,7 +396,7 @@ a:link {
     font-size:110%;
     background-color: #ffffff;
 }
-.fa-check, .fa-save > p {
+.fa-check > p, .fa-save > p {
     margin: 15px 0 0 0;
     padding: 0;
     font-size: 16px;
@@ -372,7 +404,7 @@ a:link {
     letter-spacing: 2px;
 }
 .task-completed {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 
@@ -380,17 +412,19 @@ a:link {
 .notifications {
     background-color: rgb(255, 158, 158);
     margin: 0 auto;
-    text-align: center;
-    padding: 1%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    border-radius: 6px;
-    color: #E4F9F9;
-    font-style: italic;
-    text-decoration: underline;
+    padding: 0%;
+    border-radius: 10px;
+    /* text-decoration: underline; */
+    width: 80%;
     box-shadow: 0 5px 10px #cccccc;
-    width: 100%;
-
+}
+.notification-message {
+    margin: 0;
+    padding: 20px;
+    color: #E4F9F9;
+    text-align: center;
+    font-style: italic;
+    
 }
 
 footer {
