@@ -244,6 +244,10 @@ h4 {
 .cards {
     margin: 0;
     padding: 0 15px 15px 15px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
 }
 .card {
     display: grid;
@@ -290,6 +294,8 @@ h4 {
     background-color:#f4fafa;
     padding: 10px 10px;
     font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .fa-check-circle {
     margin: 0;
@@ -300,9 +306,9 @@ h4 {
 }
 .fa-ellipsis-h {
     margin: 0;
-    padding-top: 5px;
+    padding-top: 10px;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     color: #f4fafa;
 }
 
