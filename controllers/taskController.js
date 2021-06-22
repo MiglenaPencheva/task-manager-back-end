@@ -64,10 +64,6 @@ router.get('/:id/details', async (req, res) => {
     }
 });
 
-// router.get('/:id/complete', (req, res) => {
-//     res.render('complete', { title: 'Complete Task' });
-// });
-
 router.get('/:id/complete', async (req, res) => {
     try {
         await complete(req.params.id, req.user._id);
@@ -77,9 +73,6 @@ router.get('/:id/complete', async (req, res) => {
     }
 });
 
-// router.get('/:id/delete', async (req, res) => {
-//     res.render('delete', { title: 'Delete Task' });
-// });
 router.get('/:id/delete', async (req, res) => {
     try {
         await remove(req.params.id);

@@ -5,19 +5,14 @@
 </div>
 
 <div class="task-actions">
-    {{!-- <button onclick="confirmation()">
-        <i class='fas fa-trash-alt'>
-            <p>Изтрий задачата</p>
-        </i>
-    </button> --}}
     
-    <a href="/{{task._id}}/delete">
+    <a href="/{{task._id}}/delete" onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');">
         <i class='fas fa-trash-alt'>
             <p>Изтрий задачата</p>
         </i>
     </a>
 
-    <a href="/{{task._id}}/complete">
+    <a href="/{{task._id}}/complete" onclick="return confirm('Сигурен ли си, че искаш да завършиш тази задача?');">
         <i class='fas fa-check'>
             <p>Завърши задачата</p>
         </i>
