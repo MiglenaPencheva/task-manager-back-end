@@ -1,7 +1,7 @@
-<h4>Създадена на <strong>{{formatedTask.dateCreated}}, {{formatedTask.hourCreated}}</strong> от {{formatedTask.userCreated}}</h4>
+<h4>Създадена на <strong>{{task.dateCreated}}, {{task.hourCreated}}</strong> от {{task.userCreated}}</h4>
 
 <div class="task-info">
-    {{formatedTask.content}}
+    {{task.content}}
 </div>
 
 <div class="task-actions">
@@ -9,10 +9,11 @@
     <a href="/{{task._id}}/delete" onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');">
         <i class='fas fa-trash-alt'>
             <p>Изтрий задачата</p>
-        </i></a>
+        </i>
+    </a>
 
     <h4 class="task-completed">
-        Завършена на <strong>{{formatedTask.dateCompleted}}, {{formatedTask.hourCompleted}}</strong> от {{formatedTask.userCompleted}}
+        Завършена на <strong>{{task.dateCompleted}}, {{task.hourCompleted}}</strong> от {{task.userCompleted}}
     </h4>
         
 </div>

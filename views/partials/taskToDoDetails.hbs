@@ -1,7 +1,7 @@
-<h4>Създадена на <strong>{{formatedTask.dateCreated}}, {{formatedTask.hourCreated}}</strong> от {{formatedTask.userCreated}}</h4>
+<h4>Създадена на <strong>{{task.dateCreated}}, {{task.hourCreated}}</strong> от {{task.userCreated}}</h4>
 
 <div class="task-info">
-    {{formatedTask.content}}
+    {{task.content}}
 </div>
 
 <div class="task-actions">
@@ -19,6 +19,3 @@
     </a>
         
 </div>
-
-
-{{!-- onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');" --}}
