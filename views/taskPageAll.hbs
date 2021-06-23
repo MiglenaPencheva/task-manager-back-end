@@ -1,13 +1,13 @@
 <main>
 
-    {{#if tasks}}
+    {{#if formatedTasks}}
 
-    <h3 class="text-center">{{tasks.length}} задачи</h3>
+    <h3 class="text-center">{{formatedTasks.length}} задачи</h3>
 
 
     <div class="cards">
 
-        {{#each tasks}}
+        {{#each formatedTasks}}
             {{> task}}
         {{/each}}
 

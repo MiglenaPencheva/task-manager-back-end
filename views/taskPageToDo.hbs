@@ -1,11 +1,11 @@
 <main>
 
-    {{#if toDoList}}
+    {{#if formatedToDoList}}
 
-    <h3>{{toDoList.length}} задачи за изпълнение</h3>
+    <h3>{{formatedToDoList.length}} задачи за изпълнение</h3>
 
     <div class="cards">
-        {{#each toDoList}}
+        {{#each formatedToDoList}}
         {{> task}}
         {{/each}}
     </div>

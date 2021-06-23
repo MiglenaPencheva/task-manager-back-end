@@ -5,22 +5,26 @@ const { getUserById } = require('../services/authService');
 
 router.get('/all', async (req, res) => {
     const tasks = await getAll(req.query.search);
-    res.render('taskPageAll', { tasks });
+    let formatedTasks = tasks.map(x => formatTaskDataForRender(x, x.creator, x.completor));
+    res.render('taskPageAll', { formatedTasks });
 });
 
 router.get('/archive', async (req, res) => {
     const completed = await getAllCompleted(req.query.search);
-    res.render('taskPageArchive', { completed });
+    let formatedCompleted = completed.map(x => formatTaskDataForRender(x, x.creator, x.completor));
+    res.render('taskPageArchive', { formatedCompleted });
 });
 
 router.get('/to-do', async (req, res) => {
     const toDoList = await getAllToDo(req.query.search);
-    res.render('taskPageToDo', { toDoList });
+    let formatedToDoList = toDoList.map(x => formatTaskDataForRender(x, x.creator, x.completor));
+    res.render('taskPageToDo', { formatedToDoList });
 });
 
 router.get('/my-tasks', async (req, res) => {
     const myTasks = await getMine(req.query.search, req.user._id);
-    res.render('taskPageMine', { myTasks });
+    let formatedMyTasks = myTasks.map(x => formatTaskDataForRender(x, x.creator, x.completor));
+    res.render('taskPageMine', { formatedMyTasks });
 });
 
 router.get('/create', (req, res) => {
@@ -48,27 +52,12 @@ router.get('/:id/details', async (req, res) => {
     try {
         let task = await getOne(req.params.id);
         let creator = await getUserById(task.creator);
+        let completor = await getUserById(task.completor);
+        
+        let formatedTask = formatTaskDataForRender(task, creator, completor)
+        console.log(formatedTask);
 
-        task.userCreated = creator.username;
-
-        let createdAt = task.created_at;
-        let timeCreated = createdAt.toString().split(' ');
-        task.dateCreated = `${timeCreated[2]} ${timeCreated[1]} ${timeCreated[3]}`;
-        task.hourCreated = timeCreated[4].slice(0, 5);
-
-        if (task.completor) {
-            let completor = await getUserById(task.completor);
-            
-            task.userCompleted = completor.username;
-
-            let completedAt = task.updated_at;
-            let timeCompleted = completedAt.toString().split(' ');
-
-            task.dateCompleted = `${timeCompleted[2]} ${timeCompleted[1]} ${timeCompleted[3]}`;
-            task.hourCompleted = timeCompleted[4].slice(0, 5);
-        }
-
-        res.render('details', { task });
+        res.render('details', { formatedTask });
 
     } catch (error) {
         res.redirect('/404');
@@ -99,3 +88,26 @@ router.all('*', (req, res) => {
 });
 
 module.exports = router;
+
+function formatTaskDataForRender(task, creator, completor) {
+ 
+    task.userCreated = creator.username;
+    
+    let createdAt = task.created_at;
+    let timeCreated = createdAt.toString().split(' ');
+    task.dateCreated = `${timeCreated[2]} ${timeCreated[1]} ${timeCreated[3]}`;
+    task.hourCreated = timeCreated[4].slice(0, 5);
+    
+    if (completor) {
+        
+        task.userCompleted = completor.username;
+        
+        let completedAt = task.updated_at;
+        let timeCompleted = completedAt.toString().split(' ');
+        
+        task.dateCompleted = `${timeCompleted[2]} ${timeCompleted[1]} ${timeCompleted[3]}`;
+        task.hourCompleted = timeCompleted[4].slice(0, 5);
+    }
+
+    return task;
+}
