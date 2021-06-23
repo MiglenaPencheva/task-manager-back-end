@@ -1,26 +1,23 @@
-const { remove, complete } = require('../services/taskService');
+// document.querySelector('.fa-trash-alt').addEventListener('click', confirmMsg)
 
-document.querySelector('.fa-trash-alt').addEventListener('click', (evt) => {
-    const target = evt.target;
-    console.log(target);
-    let txt;
-    if (confirm("Сигурен ли си, че искаш да изтриеш задачата?")) {
-        await remove(taskId, userId);
-        txt = "Задачата е изтрита";
-    } else {
-        txt = "You pressed Cancel!";
-    }
-});
+// document.querySelector('.fa-check').addEventListener('click', (evt) => {
+//     if (confirm("Сигурен ли си, че искаш да завършиш задачата?")) {
+//         alert("Задачата е завършена");
+//     }
+// });
 
-document.querySelector('.fa-check').addEventListener('click', (evt) => {
-    const target = evt.target;
-    console.log(target);
-    let txt;
-    if (confirm("Сигурен ли си, че искаш да завършиш задачата?")) {
-        await complete(taskId, userId);
-        txt = "Задачата е завършена";
-        
+const deleteBtn = document.querySelector(".delete-msg").addEventListener('click', showDeleteMsg);
+
+function showDeleteMsg(e) {
+    console.log('inside');
+    let deleteMsg = confirm("Сигурен ли си, че искаш да изтриеш задачата?");
+    if (!deleteMsg) {
+        e.preventDefault();
     } else {
-        txt = "You pressed Cancel!";
+        alert("Задачата е изтрита");
     }
-});
+};
+
+module.exports = {
+    showDeleteMsg
+}

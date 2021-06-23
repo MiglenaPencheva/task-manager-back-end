@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { getAll, getAllCompleted, getAllToDo, getMine, create, getOne, remove, complete } = require('../services/taskService');
 const { getUserById } = require('../services/authService');
+// const { showDeleteMsg } = require('../js/app');
 
 router.get('/all', async (req, res) => {
     const tasks = await getAll(req.query.search);
@@ -46,15 +47,25 @@ router.post('/create', async (req, res) => {
 router.get('/:id/details', async (req, res) => {
     try {
         let task = await getOne(req.params.id);
+        let creator = await getUserById(task.creator);
+
+        task.userCreated = creator.username;
+
+        let createdAt = task.created_at;
+        let timeCreated = createdAt.toString().split(' ');
+        task.dateCreated = `${timeCreated[2]} ${timeCreated[1]} ${timeCreated[3]}`;
+        task.hourCreated = timeCreated[4].slice(0, 5);
 
         if (task.completor) {
-            let user = await getUserById(task.completor);
-            task.completor = user.username;
+            let completor = await getUserById(task.completor);
+            
+            task.userCompleted = completor.username;
 
             let completedAt = task.updated_at;
-            let time = completedAt.toString().split(' ');
-            task.date = `${time[2]} ${time[1]} ${time[3]}`;
-            task.hour = time[4].slice(0, 5);
+            let timeCompleted = completedAt.toString().split(' ');
+
+            task.dateCompleted = `${timeCompleted[2]} ${timeCompleted[1]} ${timeCompleted[3]}`;
+            task.hourCompleted = timeCompleted[4].slice(0, 5);
         }
 
         res.render('details', { task });

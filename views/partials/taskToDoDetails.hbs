@@ -6,7 +6,7 @@
 
 <div class="task-actions">
     
-    <a href="/{{task._id}}/delete" onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');">
+    <a href="/{{task._id}}/delete" class="delete-msg">
         <i class='fas fa-trash-alt'>
             <p>Изтрий задачата</p>
         </i>
@@ -19,3 +19,6 @@
     </a>
         
 </div>
+
+
+{{!-- onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');" --}}
