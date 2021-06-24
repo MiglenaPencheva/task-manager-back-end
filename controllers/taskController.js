@@ -85,19 +85,52 @@ router.get('/:id/delete', async (req, res) => {
     }
 });
 
-
 router.all('*', (req, res) => {
     res.render('404', { title: 'Page Not Found' });
 });
 
 module.exports = router;
 
+const monts = {
+    'Jan': 'ян',
+    'Feb': 'февр',
+    'Mar': 'март',
+    'Apr': 'апр',
+    'May': 'май',
+    'Jun': 'юни',
+    'Jul': 'юли',
+    'Aug': 'авг',
+    'Sep': 'септ',
+    'Oct': 'окт',
+    'Nov': 'ное',
+    'Dec': 'дек',
+};
+
 function formatDate(task) {
     let createdAt = task.created_at;
     let timeCreated = createdAt.toString().split(' ');
 
-    task.dateCreated = `${timeCreated[2]} ${timeCreated[1]} ${timeCreated[3]}`;
-    task.hourCreated = timeCreated[4].slice(0, 5);
+    let day = timeCreated[2];
+    let month = monts[timeCreated[1]];
+    let year = timeCreated[3];
+
+    task.dateCreated = `${day} ${month} ${year}`;
+
+    let hour = timeCreated[4];
+    task.hourCreated = hour.slice(0, 5);
+
+    if(task.updated_at) {
+        let completedAt = task.updated_at;
+        let timeCompleted = completedAt.toString().split(' ');
+        
+        let dayC = timeCompleted[2];
+        let monthC = monts[timeCompleted[1]];
+        let yearC = timeCompleted[3];
+        task.dateCompleted = `${dayC} ${monthC} ${yearC}`;
+
+        let hourC = timeCreated[4];
+        task.hourCompleted = hourC.slice(0, 5);
+    }
 
     return task;
 }
@@ -109,33 +142,5 @@ function formatCreator(task, creator) {
 
 function formatCompletor(task, completor) {
     task.userCompleted = completor.username;
-
-    let completedAt = task.updated_at;
-    let timeCompleted = completedAt.toString().split(' ');
-
-    task.dateCompleted = `${timeCompleted[2]} ${timeCompleted[1]} ${timeCompleted[3]}`;
-    task.hourCompleted = timeCompleted[4].slice(0, 5);
-
     return task;
 }
-// function formatTaskDetails(task, creator, completor) {
-
-//     let createdAt = task.created_at;
-//     let timeCreated = createdAt.toString().split(' ');
-
-//     task.dateCreated = `${timeCreated[2]} ${timeCreated[1]} ${timeCreated[3]}`;
-//     task.hourCreated = timeCreated[4].slice(0, 5);
-
-//     if (completor) {
-
-//         task.userCompleted = completor.username;
-
-//         let completedAt = task.updated_at;
-//         let timeCompleted = completedAt.toString().split(' ');
-
-//         task.dateCompleted = `${timeCompleted[2]} ${timeCompleted[1]} ${timeCompleted[3]}`;
-//         task.hourCompleted = timeCompleted[4].slice(0, 5);
-//     }
-
-//     return task;
-// }

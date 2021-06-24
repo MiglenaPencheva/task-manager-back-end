@@ -1,9 +1,35 @@
 <main>
 
-    {{#if task.isCompleted}}
-        {{> taskCompletedDetails}}            
-    {{else}}
-        {{> taskToDoDetails}}
-    {{/if}}
-            
+    <h4>Създадена на {{task.dateCreated}} в {{task.hourCreated}} от {{task.userCreated}}</h4>
+
+    <div class="task-info">
+        {{task.content}}
+    </div>
+
+    <div class="task-actions">
+
+        <a href="/{{task._id}}/delete" onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');">
+            <i class='fas fa-trash-alt'>
+                <p>Изтрий задачата</p>
+            </i>
+        </a>
+
+        {{#if task.completor}}
+
+        <h4 class="task-completed">
+            Завършена на {{task.dateCompleted}} в {{task.hourCompleted}} от {{task.userCompleted}}
+        </h4>
+
+        {{else}}
+
+        <a href="/{{task._id}}/complete" onclick="return confirm('Сигурен ли си, че искаш да завършиш тази задача?');">
+            <i class='fas fa-check'>
+                <p>Завърши задачата</p>
+            </i>
+        </a>
+
+        {{/if}}
+
+    </div>
+
 </main>

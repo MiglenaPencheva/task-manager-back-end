@@ -6,13 +6,13 @@
 
     <div class="task-actions">
 
-        <a href="/to-do">
+        <a href="/to-do" onclick="return confirm('Сигурен ли си, че се отказваш?');">
             <i class='fas fa-times'>
                 <p>Отказ</p>
             </i>
         </a>
 
-        <button type="submit">
+        <button type="submit" onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');">
             <i class='fas fa-save'>
                 <p>Създай</p>
             </i>
