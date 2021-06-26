@@ -5,6 +5,6 @@ const taskController = require('./controllers/taskController');
 const { isGuest, isLogged } = require('./middlewares/authMiddleware');
 
 router.use('/auth', isGuest, authController);
-router.use('/', isLogged, taskController);
+router.use('/tasks', isLogged, taskController);
 
 module.exports = router;

@@ -53,7 +53,7 @@ router.post('/register', isGuest, async (req, res) => {
 
 router.get('/logout', isLogged, (req, res) => {
     res.clearCookie(COOKIE_NAME);
-    res.redirect('/auth');
+    res.redirect('/');
 });
 
 module.exports = router;

@@ -11,7 +11,7 @@ body {
 }
 main {
     background-color: #E4F9F9;
-    min-height: 444px;
+    min-height: 500px;
 }
 
 div.container {
@@ -237,8 +237,13 @@ h4 {
     padding: 20px;
     color: #97c0c0;
     font-style: italic;
-    font-size: 14px;
-    
+    font-size: 14px; 
+}
+p {
+    margin: 20px;
+    padding: 0;
+    text-align: center;
+    color: #607588;
 }
 
 .cards {
@@ -436,7 +441,83 @@ a:link {
 footer {
     text-align: center;
     padding: 20px;
+    margin: 0;
     border-radius: 0 0 10px 10px;
     color: #687979;
     background-color: #E4F9F9;
+}
+
+
+.auth-link {
+    display: block;
+    margin: 10px auto;
+    padding: 40px;
+    width: 370px;
+    outline: none;
+    font-size: 24px;
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+    background: #AFE4E4;
+    color: #f4fafa;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+}
+.auth-link:hover {
+    color: #607588;
+    font-size-adjust: inherit;
+    font-size:110%;
+    background-color: #ffffff;
+}
+.auth-form {
+    margin: 20px auto 50px auto;
+    text-align: center;
+}
+.auth-form input {
+    display: block;
+    padding: 10px 15px;
+    margin: 20px auto;
+    width: 300px;
+    border: 1px solid #AFE4E4;
+    transition: 0.3s;
+    outline: none;
+    font-size: 16px;
+    border-radius: 10px;
+    text-align: center;
+    color: #607588;
+}
+.auth-form input[type=text]:focus {
+    border: 1px solid #607588;
+}
+.auth-form input[type=password]:focus {
+    border: 1px solid #607588;
+}
+.auth-form a {
+    display: inline-block;
+    border-width: 0px;
+    margin: auto;
+    padding: 7px 15px;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #AFE4E4;
+    color: #f4fafa;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+    letter-spacing: 2px;
+}
+.auth-form a:hover {
+    color: #607588;
+    font-size-adjust: inherit;
+    font-size:110%;
+    background-color: #ffffff;
+}
+.redirect-link {
+    color: #607588;
+}
+.redirect-link:hover {
+    font-style: italic;
 }

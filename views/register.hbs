@@ -1,23 +1,10 @@
-<main>
-    <form class="text-center border border-light p-5" method="POST">
-        <div class="form-group">
-            <label for="username">Потребителско име: </label>
-            <input type="text" class="form-control" placeholder="" name="username" value="">
-        </div>
-        <div class="form-group">
-            <label for="password">Парола: </label>
-            <input type="password" class="form-control" placeholder="" name="password" value="">
-        </div>
+<h2>Регистрирай профил</h2>
 
-        <div class="form-group">
-            <label for="rePassword">Повтори паролата: </label>
-            <input type="password" class="form-control" placeholder="" name="repeatPassword" value="">
-        </div>
+<form class="auth-form" method="POST">
+        <input type="text" placeholder="потребителско име" name="username" value="">
+        <input type="password" placeholder="парола" name="password" value="">
+        <input type="password" placeholder="повтори паролата" name="repeatPassword" value="">
+        <a href="/auth/register">Регистрация</a>
+</form>
 
-        <button type="submit" class="btn btn-primary">Регистрация</button>
-    </form>
-
-    <p>Вече имаш профил?</p>
-    <a href="/auth/login" class="nav-link">Вход</a>
-
-</main>
+<p>Вече имаш профил? <a class="redirect-link" href="/auth/login"><b>Влез</b></a> в профила си.</p>

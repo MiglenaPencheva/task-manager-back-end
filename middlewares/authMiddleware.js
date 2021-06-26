@@ -23,7 +23,7 @@ function isLogged(req, res, next) {
 }
 
 function isGuest(req, res, next) {  
-    if (req.user) return res.redirect('/to-do'); 
+    if (req.user) return res.redirect('/tasks/to-do'); 
     next();
 }
 

@@ -20,7 +20,7 @@
         {{#if user}}
 
         <header>
-            <a class="home" href="/to-do"><i class='fas fa-home' style='font-size:24px'></i></a>
+            <a class="home" href="/tasks/to-do"><i class='fas fa-home' style='font-size:24px'></i></a>
             <h1>Офис помощник</h1>
 
             <div class="dropdown">
@@ -28,10 +28,10 @@
                 <div class="dropdown-content">
                     <p>Здравей, <b>{{user.username}}</b>!</p>
                     <a href="/auth/logout">Изход от профила</a>
-                    <a href="/my-tasks">Моите задачи</a>
-                    <a href="/all">Всички задачи</a>
-                    <a href="/archive">Завършени задачи</a>
-                    <a href="/to-do">Задачи за изпълнение</a>
+                    <a href="/tasks/my-tasks">Моите задачи</a>
+                    <a href="/tasks/all">Всички задачи</a>
+                    <a href="/tasks/archive">Завършени задачи</a>
+                    <a href="/tasks/to-do">Задачи за изпълнение</a>
                 </div>
             </div>
 
@@ -39,8 +39,12 @@
 
         <section class="search-create">
             {{> search}}
-            <a href="/create" class="create">Създай нова задача</a>
+            <a href="/tasks/create" class="create">Създай нова задача</a>
         </section>
+
+        {{else}}
+
+        {{guestPage}}
 
         {{/if}}
 

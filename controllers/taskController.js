@@ -31,17 +31,18 @@ router.get('/create', (req, res) => {
 });
 
 router.post('/create', async (req, res) => {
-    if (!req.body) throw new Error({ message: 'Content is required' });
-    console.log(req.body);
-    const task = req.body;
-    task.creator = req.user._id;
-    task.isCompleted = false;
-    task.completor = '';
-    console.log(task);
-
+    
     try {
+        if (req.body.content === '') throw { message: 'Попълни съдържание' };
+        
+        const task = req.body;
+        task.creator = req.user._id;
+        task.isCompleted = false;
+        task.completor = '';
+        
         await create(task);
         res.redirect('/to-do');
+
     } catch (error) {
         res.render('create', { error });
     }
@@ -70,7 +71,7 @@ router.get('/:id/details', async (req, res) => {
 router.get('/:id/complete', async (req, res) => {
     try {
         await complete(req.params.id, req.user._id);
-        res.redirect('/to-do');
+        res.redirect('/tasks/to-do');
     } catch (error) {
         res.redirect('/404');
     }
@@ -79,7 +80,7 @@ router.get('/:id/complete', async (req, res) => {
 router.get('/:id/delete', async (req, res) => {
     try {
         await remove(req.params.id);
-        res.redirect('/to-do');
+        res.redirect('/tasks/to-do');
     } catch (error) {
         res.redirect('/404');
     }

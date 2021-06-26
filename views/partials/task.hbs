@@ -1,6 +1,6 @@
 {{#if isCompleted}}
 
-    <a class="card-completed" href="/{{_id}}/details">
+    <a class="card-completed" href="/tasks/{{_id}}/details">
         <div>{{hourCreated}} на {{dateCreated}}</div>
         <div>{{content}}</div>
         <i class="fas fa-check-circle"></i>
@@ -8,7 +8,7 @@
 
 {{else}}
 
-    <a class="card" href="/{{_id}}/details">
+    <a class="card" href="/tasks/{{_id}}/details">
         <div>{{hourCreated}} на {{dateCreated}}</div>
         <div>{{content}}</div>
         <i class="fas fa-ellipsis-h"></i>
