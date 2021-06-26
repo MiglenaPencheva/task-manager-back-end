@@ -1,10 +1,11 @@
 <h2>Регистрирай профил</h2>
 
-<form class="auth-form" method="POST">
-        <input type="text" placeholder="потребителско име" name="username" value="">
-        <input type="password" placeholder="парола" name="password" value="">
-        <input type="password" placeholder="повтори паролата" name="repeatPassword" value="">
-        <a href="/auth/register">Регистрация</a>
+<form class="auth-form" action="/auth/register" method="POST">
+        <input type="text" class="auth-input" placeholder="потребителско име" name="username" value="">
+        <input type="password" class="auth-input" placeholder="парола" name="password" value="">
+        <input type="password" class="auth-input" placeholder="повтори паролата" name="repeatPassword" value="">
+        {{!-- <a href="/auth/register">Регистрация</a> --}}
+        <input type="submit" class="auth-btn" value="Регистрация">
 </form>
 
-<p>Вече имаш профил? <a class="redirect-link" href="/auth/login"><b>Влез</b></a> в профила си.</p>
+<div class="redirect">Вече имаш профил? <a class="redirect-link" href="/auth/login"><b>Влез</b></a> в профила си.</div>

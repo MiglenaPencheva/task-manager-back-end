@@ -5,7 +5,7 @@ const { SECRET } = require('../config/config');
 
 async function register(username, password) {
     let existing = await User.findOne({ username });
-    if (existing) throw { message:  'Username already exists, choose a new one' };
+    if (existing) throw { message:  'Потребителското име е заето!' };
 
     let user = new User({ username, password });
     return await user.save();
@@ -13,10 +13,10 @@ async function register(username, password) {
 
 async function login(username, password) {
     let user = await User.findOne({ username });
-    if (!user) throw { message: 'User not found', status: 404 };
+    if (!user) throw { message: 'Грешно потребителско име или парола!', status: 404 };
 
     let areEqual = await bcrypt.compare(password, user.password);
-    if (!areEqual) throw { message: 'Wrong username or password', status: 404 };
+    if (!areEqual) throw { message: 'Грешно потребителско име или парола!', status: 404 };
 
     let token = jwt.sign({ _id: user._id, username: user.username }, SECRET);
 

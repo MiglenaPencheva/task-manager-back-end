@@ -12,15 +12,16 @@ router.get('/login', isGuest, (req, res) => {
 });
 
 router.post('/login', isGuest, async (req, res) => {
+
+    console.log(req.body);
     const { username, password } = req.body;
 
     try {
-        if (!username) throw { message: 'Username required' };
-        if (!password) throw { message: 'Password required' };
+        if (!username || !password) throw { message: 'Попълни всички полета!' };
         
         let token = await login(username, password);
         res.cookie(COOKIE_NAME, token, { httpOnly: true });
-        res.redirect('/to-do');
+        res.redirect('/tasks/to-do');
 
     } catch (error) {
         return res.render('login', { error });
@@ -35,16 +36,14 @@ router.post('/register', isGuest, async (req, res) => {
     let { username, password, repeatPassword } = req.body;
     
     try {
-        if (!username) throw { message: 'Username required' };
-        if (!password) throw { message: 'Password required' };
-        if (!repeatPassword) throw { message: 'Password required' };
-        if (password != repeatPassword) throw { message: 'Password missmatch!' };
+        if (!username || !password|| !repeatPassword) throw { message: 'Попълни всички полета!' };
+        if (password != repeatPassword) throw { message: 'Паролите не съвпадат!' };
         
         await register(username, password);
 
         let token = await login(username, password);
         res.cookie(COOKIE_NAME, token, { httpOnly: true });
-        res.redirect('/to-do');
+        res.redirect('/tasks/to-do');
 
     } catch (error) {
         return res.render('register', { error });
@@ -53,7 +52,7 @@ router.post('/register', isGuest, async (req, res) => {
 
 router.get('/logout', isLogged, (req, res) => {
     res.clearCookie(COOKIE_NAME);
-    res.redirect('/');
+    res.redirect('/auth');
 });
 
 module.exports = router;

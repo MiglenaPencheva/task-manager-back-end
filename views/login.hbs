@@ -1,9 +1,10 @@
 <h2>Вход към профила</h2>
 
-    <form class="auth-form" method="POST">
-        <input type="text" placeholder="потребителско име" name="username" value="">
-        <input type="password" placeholder="парола" name="password" value="">
-        <a href="/auth/login">Вход</a>
+    <form class="auth-form" action="/auth/login" method="POST">
+        <input type="text" class="auth-input" placeholder="потребителско име" name="username" value="">
+        <input type="password" class="auth-input" placeholder="парола" name="password" value="">
+        <input type="submit" class="auth-btn" value="Вход">
+        {{!-- <a href="/auth/login"></a> --}}
     </form>
 
-<p>Нямаш профил? <a class="redirect-link" href="/auth/register"><b>Регистрирай</b></a> свой профил.</p>
+<div class="redirect">Нямаш профил? <a class="redirect-link" href="/auth/register"><b>Регистрирай</b></a> свой профил.</div>

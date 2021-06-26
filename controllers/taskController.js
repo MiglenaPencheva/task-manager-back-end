@@ -41,7 +41,7 @@ router.post('/create', async (req, res) => {
         task.completor = '';
         
         await create(task);
-        res.redirect('/to-do');
+        res.redirect('/tasks/to-do');
 
     } catch (error) {
         res.render('create', { error });
