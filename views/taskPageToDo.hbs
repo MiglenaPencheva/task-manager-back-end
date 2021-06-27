@@ -2,7 +2,12 @@
 
     {{#if formatedToDoList}}
 
-    <h3>{{formatedToDoList.length}} задачи за изпълнение</h3>
+        {{#if isOne}}
+            <h3 class="text-center">1 задача за изпълнение</h3>
+        {{else}}
+            <h3>{{formatedToDoList.length}} задачи за изпълнение</h3>
+        {{/if}}
+
 
     <div class="cards">
         {{#each formatedToDoList}}

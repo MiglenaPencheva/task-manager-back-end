@@ -5,25 +5,29 @@ const { getUserById } = require('../services/authService');
 router.get('/all', async (req, res) => {
     const tasks = await getAll(req.query.search);
     let formatedTasks = tasks.map(x => formatDate(x));
-    res.render('taskPageAll', { formatedTasks });
+    let isOne = formatedTasks.length == 1 ? true : false;
+    res.render('taskPageAll', { formatedTasks, isOne });
 });
 
 router.get('/archive', async (req, res) => {
     const completed = await getAllCompleted(req.query.search);
     let formatedCompleted = completed.map(x => formatDate(x));
-    res.render('taskPageArchive', { formatedCompleted });
+    let isOne = formatedCompleted.length == 1 ? true : false;
+    res.render('taskPageArchive', { formatedCompleted, isOne });
 });
 
 router.get('/to-do', async (req, res) => {
     const toDoList = await getAllToDo(req.query.search);
     let formatedToDoList = toDoList.map(x => formatDate(x));
-    res.render('taskPageToDo', { formatedToDoList });
+    let isOne = formatedToDoList.length == 1 ? true : false;
+    res.render('taskPageToDo', { formatedToDoList, isOne });
 });
 
 router.get('/my-tasks', async (req, res) => {
     const myTasks = await getMine(req.query.search, req.user._id);
     let formatedMyTasks = myTasks.map(x => formatDate(x));
-    res.render('taskPageMine', { formatedMyTasks });
+    let isOne = formatedMyTasks.length == 1 ? true : false;
+    res.render('taskPageMine', { formatedMyTasks, isOne });
 });
 
 router.get('/create', (req, res) => {

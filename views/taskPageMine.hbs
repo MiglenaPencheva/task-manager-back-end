@@ -2,12 +2,17 @@
 
     {{#if formatedMyTasks}}
 
-    <h3 class="text-center">{{formatedMyTasks.length}} задачи, създадени от {{user.username}}</h3>
+        {{#if isOne}}
+            <h3 class="text-center">1 задача, създаденa от {{user.username}}</h3>
+        {{else}}
+            <h3 class="text-center">{{formatedMyTasks.length}} задачи, създадени от {{user.username}}</h3>   
+        {{/if}}
+
 
     <div class="cards">
 
         {{#each formatedMyTasks}}
-        {{> task}}
+            {{> task}}
         {{/each}}
 
     </div>

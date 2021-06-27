@@ -2,12 +2,17 @@
 
     {{#if formatedCompleted}}
 
-    <h3 class="text-center">{{formatedCompleted.length}} завършени задачи</h3>
+        {{#if isOne}}
+            <h3 class="text-center">1 завършена задача</h3>
+        {{else}}
+            <h3 class="text-center">{{formatedCompleted.length}} завършени задачи</h3>
+        {{/if}}
+
 
     <div class="cards">
 
         {{#each formatedCompleted}}
-        {{> task}}
+            {{> task}}
         {{/each}}
 
     </div>

@@ -2,17 +2,19 @@
 
     {{#if formatedTasks}}
 
-    <h3 class="text-center">{{formatedTasks.length}} задачи</h3>
-
+        {{#if isOne}}
+            <h3 class="text-center">1 задача</h3>
+        {{else}}
+            <h3 class="text-center">{{formatedTasks.length}} задачи</h3>
+        {{/if}}
 
     <div class="cards">
 
         {{#each formatedTasks}}
-            {{> task}}
+        {{> task}}
         {{/each}}
 
     </div>
-
 
     {{else}}
         <h3>Няма задачи...</h4=>

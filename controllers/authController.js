@@ -11,9 +11,7 @@ router.get('/login', isGuest, (req, res) => {
     res.render('login');
 });
 
-router.post('/login', isGuest, async (req, res) => {
-
-    console.log(req.body);
+router.post('/login', isGuest, async (req, res) => { 
     const { username, password } = req.body;
 
     try {
@@ -51,6 +49,7 @@ router.post('/register', isGuest, async (req, res) => {
 });
 
 router.get('/logout', isLogged, (req, res) => {
+    console.log("logging outttt");
     res.clearCookie(COOKIE_NAME);
     res.redirect('/auth');
 });

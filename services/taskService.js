@@ -58,7 +58,6 @@ async function complete(taskId, userId) {
     }
     existing.isCompleted = true;
     existing.completor = userId;
-    // Object.assign(existing, completedTask)
     return existing.save();
 }
 
