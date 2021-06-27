@@ -17,22 +17,28 @@ function auth(req, res, next) {
     next();
 }
 
-function isLogged(req, res, next) {
-    if (!req.user) {
-        return res.redirect('/auth');
-    }
-    next();
+function isAuth() {
+    return (req, res, next) => {
+        if (req.user != undefined) {
+            next();
+        } else {
+            res.redirect('/auth');
+        }
+    };
 }
 
-function isGuest(req, res, next) {  
-    if (req.user) {
-        return res.redirect('/tasks/to-do');
-    }
-    next();
+function isGuest() {
+    return (req, res, next) => {
+        if (req.user == undefined) {
+            next();
+        } else {
+            res.redirect('/products');
+        }
+    };
 }
 
 module.exports = {
     auth,
-    isLogged,
+    isAuth,
     isGuest
 }

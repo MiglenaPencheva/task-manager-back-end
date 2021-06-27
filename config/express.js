@@ -8,7 +8,7 @@ const { auth } = require('../middlewares/authMiddleware');
 module.exports = function (app) {
 
     app.use(cors({
-        origin: 'http://localhost:3030',
+        origin: 'http://localhost:3033',
         credentials: true,
         exposedHeaders: 'Authorization'
     }));
