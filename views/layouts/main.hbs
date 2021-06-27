@@ -19,41 +19,41 @@
 
         {{#if user}}
 
-        <header>
-            <a class="home" href="/tasks/to-do"><i class='fas fa-home' style='font-size:24px'></i></a>
-            <h1>Офис помощник</h1>
+            <header>
+                <a class="home" href="/to-do"><i class='fas fa-home' style='font-size:24px'></i></a>
+                <h1>Офис помощник</h1>
 
-            <div class="dropdown">
-                <button class="dropbtn"><i class='fas fa-chevron-down'></i></button>
-                <div class="dropdown-content">
-                    <p>Здравей, <b>{{user.username}}</b>!</p>
-                    <a href="/auth/logout">Изход от профила</a>
-                    <a href="/tasks/my-tasks">Моите задачи</a>
-                    <a href="/tasks/all">Всички задачи</a>
-                    <a href="/tasks/archive">Завършени задачи</a>
-                    <a href="/tasks/to-do">Задачи за изпълнение</a>
+                <div class="dropdown">
+                    <button class="dropbtn"><i class='fas fa-chevron-down'></i></button>
+                    <div class="dropdown-content">
+                        <p>Здравей, <b>{{user.username}}</b>!</p>
+                        <a href="/auth/logout">Изход от профила</a>
+                        <a href="/my-tasks">Моите задачи</a>
+                        <a href="/all">Всички задачи</a>
+                        <a href="/archive">Завършени задачи</a>
+                        <a href="/to-do">Задачи за изпълнение</a>
+                    </div>
                 </div>
-            </div>
 
-        </header>
+            </header>
 
-        <section class="search-create">
-            {{> search}}
-            <a href="/tasks/create" class="create">Създай нова задача</a>
-        </section>
+            <section class="search-create">
+                {{> search}}
+                <a href="/create" class="create">Създай нова задача</a>
+            </section>
 
         {{else}}
 
-        {{guestPage}}
+            {{guestPage}}
 
         {{/if}}
 
         <main>
             
             {{#if error}}
-            <section class="notifications">
-                <p class="notification-message">{{error.message}}</p>
-            </section>
+                <section class="notifications">
+                    <p class="notification-message">{{error.message}}</p>
+                </section>
             {{/if}}
 
             {{{body}}}
@@ -61,7 +61,7 @@
         </main>
 
         <footer class="page-footer font-small">
-            <div class="footer-copyright text-center py-3">© 2021 Mgl</div>
+            <div>© 2021 Mgl</div>
         </footer>
 
     </div>

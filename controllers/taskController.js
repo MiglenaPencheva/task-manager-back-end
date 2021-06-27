@@ -45,7 +45,7 @@ router.post('/create', async (req, res) => {
         task.completor = '';
         
         await create(task);
-        res.redirect('/tasks/to-do');
+        res.redirect('/to-do');
 
     } catch (error) {
         res.render('create', { error });
@@ -75,7 +75,7 @@ router.get('/:id/details', async (req, res) => {
 router.get('/:id/complete', async (req, res) => {
     try {
         await complete(req.params.id, req.user._id);
-        res.redirect('/tasks/to-do');
+        res.redirect('/to-do');
     } catch (error) {
         res.redirect('/404');
     }
@@ -84,7 +84,7 @@ router.get('/:id/complete', async (req, res) => {
 router.get('/:id/delete', async (req, res) => {
     try {
         await remove(req.params.id);
-        res.redirect('/tasks/to-do');
+        res.redirect('/to-do');
     } catch (error) {
         res.redirect('/404');
     }
