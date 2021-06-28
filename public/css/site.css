@@ -252,7 +252,7 @@ h4 {
 }
 .card {
     display: grid;
-    grid-template-columns: 10% auto 5%;
+    grid-template-columns: 18% auto 5%;
     grid-gap: 10px;
     margin: 15px;
     padding: 10px;
@@ -275,7 +275,7 @@ h4 {
 }
 .card-completed {
     display: grid;
-    grid-template-columns: 10% auto 5%;
+    grid-template-columns: 18% auto 5%;
     grid-gap: 10px;
     margin: 15px;
     padding: 10px;

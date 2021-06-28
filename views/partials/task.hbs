@@ -1,7 +1,7 @@
 {{#if isCompleted}}
 
     <a class="card-completed" href="/{{_id}}/details">
-        <div>{{hourCreated}} на {{dateCreated}}</div>
+        <div>{{hourCreated}} / {{dateCreated}}</div>
         <div>{{content}}</div>
         <i class="fas fa-check-circle"></i>
     </a>
@@ -9,7 +9,7 @@
 {{else}}
 
     <a class="card" href="/{{_id}}/details">
-        <div>{{hourCreated}} на {{dateCreated}}</div>
+        <div>{{hourCreated}} / {{dateCreated}}</div>
         <div>{{content}}</div>
         <i class="fas fa-ellipsis-h"></i>
     </a>
