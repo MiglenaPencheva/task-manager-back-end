@@ -9,11 +9,11 @@ const config = {
         COOKIE_NAME: 'TOKEN',
     },
     production: {
-        PORT: null || 80,
-        DB_URI: `mongodb://localhost/task-manager`,
-        SALT_ROUNDS: 10,
-        SECRET: 'STAVAMNOGOSOLENO',
-        COOKIE_NAME: 'TOKEN',
+        // PORT: null || 80,
+        // DB_URI: `mongodb://localhost/task-manager`,
+        // SALT_ROUNDS: 10,
+        // SECRET: 'STAVAMNOGOSOLENO',
+        // COOKIE_NAME: 'TOKEN',
     }
 
 };
