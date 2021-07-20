@@ -3,7 +3,7 @@ const { register, login } = require('../services/authService');
 const { COOKIE_NAME } = require('../config/config');
 const { isAuth, isGuest } = require('../middlewares/authMiddleware');
 
-router.get('/', (req, res) => {
+router.get('/', isGuest(), (req, res) => {
     res.render('guestPage');
 })
 
@@ -19,7 +19,7 @@ router.post('/login', isGuest(), async (req, res) => {
         
         let token = await login(username, password);
         res.cookie(COOKIE_NAME, token, { httpOnly: true });
-        res.redirect('/to-do');
+        res.redirect('/tasks/to-do');
 
     } catch (error) {
         return res.render('login', { error });
@@ -41,7 +41,7 @@ router.post('/register', isGuest(), async (req, res) => {
 
         let token = await login(username, password);
         res.cookie(COOKIE_NAME, token, { httpOnly: true });
-        res.redirect('/to-do');
+        res.redirect('/tasks/to-do');
 
     } catch (error) {
         return res.render('register', { error });

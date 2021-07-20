@@ -32,7 +32,7 @@ function isGuest() {
         if (req.user == undefined) {
             next();
         } else {
-            res.redirect('/products');
+            res.redirect('/tasks/to-do');
         }
     };
 }
