@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{{title}}</title>
-    <link href="/static/css/site.css" type="text/css" rel="stylesheet">
+    {{!-- <link href="/static/css/site.css" type="text/css" rel="stylesheet"> --}}
+    <link href="/static/css/site-ittscc.css" type="text/css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin='anonymous'></script>
     {{!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -21,18 +22,30 @@
         {{#if user}}
 
         <header>
-            <a class="home" href="/tasks/to-do"><i class='fas fa-home' style='font-size:24px'></i></a>
+            {{!-- <a class="home" href="/tasks/to-do"><i class='fas fa-home' style='font-size:24px'></i></a> --}}
+
+            <div class="dropdown">
+                <i class="fas fa-bars"></i>
+                <div class="dropdown-content">
+                    <h4>Здравей, {{user.username}}!</h4>
+                    <hr>                 
+                    <a href="/tasks/create">Създай нова задача</a>
+                    <hr>
+                    <a href="/tasks/to-do">Задачи за изпълнение</a>
+                    <a href="/tasks/all">Всички задачи</a>
+                    <a href="/tasks/archive">Завършени задачи</a>
+                    <a href="/tasks/my-tasks">Моите задачи</a>
+                    <hr>
+                    <a href="/auth/logout">Изход от профила</a>
+                </div>
+            </div>
+
             <h1>Офис помощник</h1>
 
             <div class="dropdown">
-                <button class="dropbtn"><i class='fas fa-chevron-down'></i></button>
-                <div class="dropdown-content">
-                    <p>Здравей, <b>{{user.username}}</b>!</p>
-                    <a href="/auth/logout">Изход от профила</a>
-                    <a href="/tasks/my-tasks">Моите задачи</a>
-                    <a href="/tasks/all">Всички задачи</a>
-                    <a href="/tasks/archive">Завършени задачи</a>
-                    <a href="/tasks/to-do">Задачи за изпълнение</a>
+                <i class="fas fa-plus"></i>
+                <div class="dropdown-content--right">
+                    <a href="/tasks/create">Създай нова задача</a>
                 </div>
             </div>
 

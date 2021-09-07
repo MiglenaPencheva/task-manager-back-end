@@ -53,7 +53,7 @@ header .home:hover {
     font-size:110%;
     background-color: #ffffff;
 }
-header > h1 {
+/* header > h1 {
     margin: 0;
     padding: 0;
     text-align: center;
@@ -76,7 +76,7 @@ header > h1 {
         font-size: 18px;
         letter-spacing: 2px;
     }
-}
+} */
 
 header div.dropdown {
     position: relative;
@@ -115,6 +115,9 @@ header .dropbtn {
     color: #f4fafa;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
+/* .fa-bars {
+    color: var(--mid);
+} */
 header .dropdown-content a {
     padding: 10px 20px;
     border-radius: 10px;
