@@ -42,19 +42,22 @@
 
             <h1>Офис помощник</h1>
 
-            <div class="dropdown">
+            <div class="dropdown dropdown--center">
+                <i class="fas fa-search"></i>
+                <div class="dropdown-content--center">
+                    {{!-- <a href="/tasks/search">Търси</a> --}}
+                    {{>search}}
+                </div>
+            </div>
+
+            <div class="dropdown dropdown--right">
                 <i class="fas fa-plus"></i>
                 <div class="dropdown-content--right">
-                    <a href="/tasks/create">Създай нова задача</a>
+                    <a href="/tasks/create">Създай</a>
                 </div>
             </div>
 
         </header>
-
-        <section class="search-create">
-            {{> search}}
-            <a href="/tasks/create" class="create">Създай нова задача</a>
-        </section>
 
         {{else}}
 

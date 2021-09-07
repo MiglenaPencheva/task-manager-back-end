@@ -1,19 +1,30 @@
 header {
     display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-columns: 1fr 9fr 1fr 1fr;
     padding: 20px;
     box-shadow: 0px 2px 4px var(--dark);
     justify-items: center;
-    justify-content: space-between;
 }
 
 @media screen and (max-width: 604px) { 
     header {
-        padding: 15px;
+        padding: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+        justify-items: stretch;
+        align-items: center;
     }
 }
 @media screen and (max-width: 350px) {
     header {
-        padding: 12px;
+        padding: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        justify-items: stretch;
+        align-items: center;
     }
 }
+
+

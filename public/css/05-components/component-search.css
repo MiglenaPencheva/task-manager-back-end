@@ -1,0 +1,31 @@
+.search {
+    padding: 15px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 604px) { 
+    .search {
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .search {
+        padding: 12px;
+    }
+}
+
+.search__btn {
+    width: 300px;
+    margin-top: 10px;
+    color: var(--white);
+}
+@media screen and (max-width: 604px) { 
+    .search__btn {
+        width: 180px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .search__btn {
+        width: 160px;
+    }
+}
