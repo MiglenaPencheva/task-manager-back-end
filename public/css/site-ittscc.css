@@ -1,21 +1,26 @@
 @import '01-settings/settings-typography.css';
 @import '01-settings/settings-colors.css';
 
-@import '02-generic/generic-normalize.css';
+/* @import '02-generic/generic-normalize.css'; */
 
 @import '03-elements/elements-body.css';
 @import '03-elements/elements-headings.css';
+@import '03-elements/elements-li.css';
 @import '03-elements/elements-span.css';
 @import '03-elements/elements-links.css';
 @import '03-elements/elements-input.css';
 @import '03-elements/elements-hr.css';
+@import '03-elements/elements-hr.css';
+@import '03-elements/elements-section.css';
+@import '03-elements/elements-footer.css';
 
 @import '04-objects/objects-containers.css';
 
 @import '05-components/components-header.css';
 @import '05-components/component-dropdown.css';
 @import '05-components/components-button.css';
-@import '05-components/components-card.css';
+@import '05-components/components-card-small.css';
+@import '05-components/components-card-big.css';
 @import '05-components/component-search.css';
 
 @import '06-utilities/utilities-hidden.css';

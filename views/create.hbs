@@ -1,23 +1,23 @@
-<h3>Създай задача</h3>
+<section>
 
-<form class="create-form" method="POST">
+    <h3>Създай задача</h3>
 
-    <textarea type="text" placeholder="Съдържание..." name="content"></textarea>
-
-    <div class="task-actions">
-
-        <a href="/tasks/to-do" onclick="return confirm('Сигурен ли си, че се отказваш?');">
-            <i class='fas fa-times'>
-                <p>Отказ</p>
-            </i>
-        </a>
-
-        <button type="submit" onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');">
-            <i class='fas fa-save'>
-                <p>Създай</p>
-            </i>
-        </button>
+    <form class="create-form" method="POST">
         
-    </div>
+        <textarea type="text" placeholder="Съдържание..." name="content"></textarea>
 
-</form>
+        <div class="task-actions">
+            <a href="/tasks/to-do" onclick="return confirm('Сигурен ли си, че се отказваш?');">
+                <i class='fas fa-times'>
+                    <p>Отказ</p>
+                </i>
+            </a>
+            <button type="submit" onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');">
+                <i class='fas fa-save'>
+                    <p>Създай</p>
+                </i>
+            </button>
+        </div>
+    </form>
+
+</section>

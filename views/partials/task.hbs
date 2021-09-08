@@ -1,16 +1,16 @@
 {{#if isCompleted}}
 
-    <a class="card-completed" href="/tasks/{{_id}}/details">
-        <div>{{hourCreated}} / {{dateCreated}}</div>
-        <div>{{content}}</div>
-        <i class="fas fa-check-circle"></i>
+    <a class="card-small completed" href="/tasks/{{_id}}/details">
+        <li class="completed--inner">{{dateCreated}} / {{hourCreated}}</li>
+        <li class="completed--inner">{{content}}</li>
+        <i class="fas fa-check"></i>
     </a>
 
 {{else}}
 
-    <a class="card" href="/tasks/{{_id}}/details">
-        <div>{{hourCreated}} / {{dateCreated}}</div>
-        <div>{{content}}</div>
+    <a class="card-small todo" href="/tasks/{{_id}}/details">
+        <li class="todo--inner">{{dateCreated}} / {{hourCreated}}</li>
+        <li class="todo--inner">{{content}}</li>
         <i class="fas fa-ellipsis-h"></i>
     </a>
         

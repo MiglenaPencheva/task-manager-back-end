@@ -17,7 +17,6 @@
 .search__btn {
     width: 300px;
     margin-top: 10px;
-    color: var(--white);
 }
 @media screen and (max-width: 604px) { 
     .search__btn {

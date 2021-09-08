@@ -2,10 +2,29 @@
     /* --dark: #607588; */
     --dark: #336161;
     --deep: #73a5a5;
-    --mid: #AFE4E4;
+    --mid: #baebeb;
     --light: #E4F9F9;
-    --muted: #e3eded;
-    --grey: #7f9996;
+    --darkgrey: #7f9996;
+    --grey: #deecec;
+    --lightgrey: #f0f7f7;
     --white: #f4fafa;
     --red: #fbd5d5;
+}
+
+.todo {
+    color: var(--dark);
+    background-color: var(--mid);
+}
+
+.completed {
+    color: var(--darkgrey);
+    background-color: var(--grey);
+}
+
+.todo--inner {
+    background-color: var(--light);
+}
+
+.completed--inner {
+    background-color: var(--lightgrey);
 }

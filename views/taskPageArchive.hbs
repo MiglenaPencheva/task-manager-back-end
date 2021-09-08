@@ -1,24 +1,22 @@
-<main>
+<section>
 
     {{#if formatedCompleted}}
 
         {{#if isOne}}
-            <h3 class="text-center">1 завършена задача</h3>
+            <h3>1 завършена задача</h3>
         {{else}}
-            <h3 class="text-center">{{formatedCompleted.length}} завършени задачи</h3>
+            <h3>{{formatedCompleted.length}} завършени задачи</h3>
         {{/if}}
 
 
-    <div class="cards">
-
+    <div>
         {{#each formatedCompleted}}
             {{> task}}
         {{/each}}
-
     </div>
 
     {{else}}
-        <h3>Няма завършени задачи...</h4class=>
+        <h3>Няма завършени задачи...</h3>
     {{/if}}
 
-</main>
+</section>
