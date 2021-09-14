@@ -7,6 +7,7 @@
     {{!-- <link href="/static/css/site.css" type="text/css" rel="stylesheet"> --}}
     <link href="/static/css/site-ittscc.css" type="text/css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin='anonymous'></script>
+    {{!-- <script src="/helpers/utilities.js"></script> --}}
     {{!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -24,7 +25,7 @@
         <header>
             {{!-- <a class="home" href="/tasks/to-do"><i class='fas fa-home' style='font-size:24px'></i></a> --}}
 
-            <div class="dropdown">
+            <button class="menu" onclick="showMenu()">
                 <i class="fas fa-bars"></i>
                 <div class="dropdown-content">
                     <h4>Здравей, {{user.username}}!</h4>
@@ -38,24 +39,19 @@
                     <hr>
                     <a href="/auth/logout">Изход от профила</a>
                 </div>
-            </div>
-
+            </button>
+                        
             <h1>Офис помощник</h1>
 
-            <div class="dropdown dropdown--center">
+            <button class="menu" onclick="showSearch()">
                 <i class="fas fa-search"></i>
-                <div class="dropdown-content--center">
-                    {{!-- <a href="/tasks/search">Търси</a> --}}
-                    {{>search}}
-                </div>
-            </div>
+            </button>
 
-            <div class="dropdown dropdown--right">
+            <button class="menu">
                 <i class="fas fa-plus"></i>
-                <div class="dropdown-content--right">
-                    <a href="/tasks/create">Създай</a>
-                </div>
-            </div>
+                <a href="/tasks/create"></a>
+            </button>
+            
 
         </header>
 
@@ -67,6 +63,8 @@
 
         <main>
 
+            {{>search}}
+            
             {{#if error}}
             <section class="notifications">
                 <p class="notification-message">{{error.message}}</p>
@@ -105,6 +103,29 @@
                 });
         }
     </script> --}}
+
+    <script>
+        function showMenu() {
+            let menu = document.querySelector('.dropdown-content');
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+        function showSearch() {
+            let search = document.querySelector('.search');
+            if (search.style.display === "block") {
+                search.style.display = "none";
+            } else {
+                search.style.display = "block";
+            }
+        }
+        function hideSearch() {
+            let search = document.querySelector('.search');
+            search.style.display = "none";
+        }
+    </script>
 
 </body>
 

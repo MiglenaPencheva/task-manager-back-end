@@ -35,15 +35,15 @@ router.get('/create', (req, res) => {
 });
 
 router.post('/create', async (req, res) => {
-    
+
     try {
         if (req.body.content === '') throw { message: 'Попълни съдържание' };
-        
+
         const task = req.body;
         task.creator = req.user._id;
         task.isCompleted = false;
         task.completor = '';
-        
+
         await create(task);
         res.redirect('/tasks/to-do');
 
@@ -56,15 +56,15 @@ router.get('/:id/details', async (req, res) => {
     try {
         let task = await getOne(req.params.id);
         formatDate(task);
-        
+
         let creator = await getUserById(task.creator);
         formatCreator(task, creator);
-        
+
         if (task.completor) {
             let completor = await getUserById(task.completor);
             formatCompletor(task, completor);
         }
-        
+
         res.render('details', { task });
 
     } catch (error) {
@@ -124,10 +124,10 @@ function formatDate(task) {
     let hour = timeCreated[4];
     task.hourCreated = hour.slice(0, 5);
 
-    if(task.updated_at) {
+    if (task.updated_at) {
         let completedAt = task.updated_at;
         let timeCompleted = completedAt.toString().split(' ');
-        
+
         let dayC = timeCompleted[2];
         let monthC = monts[timeCompleted[1]];
         let yearC = timeCompleted[3];

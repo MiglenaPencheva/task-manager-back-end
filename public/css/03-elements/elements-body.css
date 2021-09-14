@@ -4,4 +4,6 @@ body {
     max-width: 1200px;
     font-family: 'Montserrat';
     background-color: var(--light); 
+    box-shadow: 0px 2px 3px var(--deep);
+    border-radius: 0 0 8px 8px;
 }

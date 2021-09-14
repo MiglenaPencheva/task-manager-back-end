@@ -1,6 +1,8 @@
 .search {
+    display: none;
+    margin: auto;
     padding: 15px;
-    justify-content: center;
+    box-shadow: 0px 2px 3px var(--deep);
 }
 
 @media screen and (max-width: 604px) { 
@@ -10,21 +12,17 @@
 }
 @media screen and (max-width: 350px) {
     .search {
-        padding: 12px;
+        padding: 10px;
     }
 }
 
 .search__btn {
-    width: 300px;
-    margin-top: 10px;
+    background-color: var(--mid);
 }
-@media screen and (max-width: 604px) { 
-    .search__btn {
-        width: 180px;
-    }
-}
-@media screen and (max-width: 350px) {
-    .search__btn {
-        width: 160px;
-    }
-}
+
+/* .fa-angle-up {
+    padding: 10px;
+    font-size: 24px;
+    color: var(--dark);
+    cursor: pointer;
+} */

@@ -1,8 +1,8 @@
 input {
-    display: block;
+    /* display: block; */
     padding: 10px 15px;
-    margin: 0;
-    width: 300px;
+    margin: 0 10px 0 0;
+    /* width: 300px; */
     border: 1px solid var(--mid);
     transition: 0.3s;
     outline: none;
@@ -14,13 +14,15 @@ input {
 
 @media screen and (max-width: 604px) { 
     input {
-        font-size: 16px;
+        margin: 0 8px 0 0;
+        font-size: 18px;
         width: 180px;
     }
 }
 @media screen and (max-width: 350px) {
     input {
-        font-size: 14px;
-        width: 160px;
+        margin: 0 8px 0 0;
+        font-size: 16px;
+        width: 100px;
     }
 }

@@ -1,32 +1,32 @@
 <section>
 
-    <h4>Създадена на {{task.dateCreated}} в {{task.hourCreated}} от {{task.userCreated}}</h4>
+    <div class="card-big">
 
-    <div class="task-info">
-        {{task.content}}
-    </div>
+        <p class="card-big__info">Създадена на {{task.dateCreated}} в {{task.hourCreated}} от {{task.userCreated}}</p>
 
-    <div class="task-actions">
+        <p class="card-big__content">{{task.content}}</p>
 
-        <a href="/tasks/{{task._id}}/delete" onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');">
-            <i class='fas fa-trash-alt'>
-                <p>Изтрий задачата</p>
-            </i>
-        </a>
+        <button class="card-big__delete">
+            <a href="/tasks/{{task._id}}/delete"
+                onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');">
+            </a>
+            <i class="fas fa-trash"></i> 
+            <p>Изтрий задачата</p>
+        </button>
 
         {{#if task.completor}}
 
-        <h4 class="task-completed">
-            Завършена на {{task.dateCompleted}} в {{task.hourCompleted}} от {{task.userCompleted}}
-        </h4>
+            <p>Завършена на {{task.dateCompleted}} в {{task.hourCompleted}} от {{task.userCompleted}}</p>
 
         {{else}}
-
-        <a href="/tasks/{{task._id}}/complete" onclick="return confirm('Сигурен ли си, че искаш да завършиш тази задача?');">
-            <i class='fas fa-check'>
-                <p>Завърши задачата</p>
-            </i>
-        </a>
+            
+            <button class="card-big__archive">
+                <a href="/tasks/{{task._id}}/complete"
+                    onclick="return confirm('Сигурен ли си, че искаш да завършиш тази задача?');">
+                </a>
+                <i class="fas fa-check-circle"></i>
+                <p>Завърши задачата</p>    
+            </button>
 
         {{/if}}
 
