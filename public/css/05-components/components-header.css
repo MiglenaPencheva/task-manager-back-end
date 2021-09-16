@@ -3,8 +3,9 @@ header {
     grid-template-columns: 10% 70% 10% 10%;
     margin: 0;
     padding: 0;
-    box-shadow: 0px 2px 3px var(--deep);
-    border-radius: 10px 10px 0 0;
+    /* box-shadow: 0px 2px 3px var(--deep); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     justify-items: stretch;
     align-items: stretch;
 }

@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: 100px auto 30px;
     grid-gap: 12px;
+    align-items: center;
     border-radius: 20px;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
 }
@@ -12,7 +13,7 @@
     .card-small {
         margin: 15px;
         padding: 10px;
-        grid-template-columns: 70px auto 20px;
+        grid-template-columns: 60px auto 20px;
         grid-gap: 10px;
         border-radius: 16px;
     }
@@ -31,24 +32,33 @@
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.fa-ellipsis-h,
-.fa-check {
-    margin: 0;
-    padding-top: 12px;
-    text-align: center;
-    font-size: 18px;
-    color: #f4fafa;
+.fa-ellipsis-h {
+    font-size: 1.6rem;
+    color: var(--white);
 }
 @media screen and (max-width: 604px) {
-    .fa-ellipsis-h,
-    .fa-check {
-        font-size: 16px;
+    .fa-ellipsis-h {    
+        font-size: 1.2rem;
     }
 }
 @media screen and (max-width: 350px) {
-    .fa-ellipsis-h,
-    .fa-check {
-        font-size: 14px;
-        padding-top: 10px;
+    .fa-ellipsis-h {    
+        font-size: 1rem;
+    }
+}
+.fa-check-circle {
+    margin: 0;
+    /* text-align: center; */
+    font-size: 1.8rem;
+    color: var(--white);
+}
+@media screen and (max-width: 604px) {
+    .fa-check-circle {    
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 350px) {
+    .fa-check-circle {    
+        font-size: 1.2rem;
     }
 }

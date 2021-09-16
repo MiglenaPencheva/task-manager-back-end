@@ -4,32 +4,29 @@ button {
     padding: 12px 12px 10px 12px;
     min-width: 50px;
     min-height: 45px;
-    font-size: 20px;
-    letter-spacing: 3px;
+    font-size: 1rem;
+    letter-spacing: 2px;
     border-radius: 10px;
     color: var(--white);
     cursor: pointer;
-    /* border: 0.2px solid var(--deep); */
-    /* box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3); */
     transition-duration: 0.3s;
 }
 
 button:hover {
     color: var(--dark);
-    font-size: 110%;
     background-color: var(--white);
 }
 
 @media screen and (max-width: 604px) {
     button {
-        font-size: 18px;
+        font-size: 0.9rem;
         min-width: 40px;
         min-height: 35px;
     }
 }
 @media screen and (max-width: 350px) {
     button {
-        font-size: 16px;
+        font-size: 0.8rem;
         min-width: 35px;
         min-height: 30px;
     }
