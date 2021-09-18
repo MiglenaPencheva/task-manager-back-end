@@ -1,23 +1,61 @@
 <section>
 
-    <h3>Създай задача</h3>
-
-    <form class="create-form" method="POST">
+    <form class="create" method="POST">
         
-        <textarea type="text" placeholder="Съдържание..." name="content"></textarea>
+        <p class="create__title">Създай задача</p>
 
-        <div class="task-actions">
-            <a href="/tasks/to-do" onclick="return confirm('Сигурен ли си, че се отказваш?');">
-                <i class='fas fa-times'>
-                    <p>Отказ</p>
-                </i>
-            </a>
-            <button type="submit" onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');">
-                <i class='fas fa-save'>
-                    <p>Създай</p>
-                </i>
-            </button>
-        </div>
+        <textarea 
+            class="create__textarea"
+            type="text" 
+            placeholder="Съдържание..." 
+            name="content">
+        </textarea>
+
+        <button class="create__action red">
+            <a href="/tasks/to-do"></a>
+            {{!-- onclick="return confirm('Сигурен ли си, че се отказваш?');"> --}}
+            <i class="fas fa-times"></i>
+            <span>Отказ</span>
+        </button>
+
+        <button 
+            class="create__action green"
+            type="submit">
+            {{!-- onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');" --}}
+            <i class='fas fa-save'></i>
+            <span>Създай</span>
+        </button>
+
     </form>
 
 </section>
+
+
+{{!-- <section>
+
+    <div class="card-big" method="POST">
+        
+        <p class="card-big__info">Създай задача</p>
+
+        <input 
+            class="card-big__content"
+            type="text" placeholder="Съдържание..." 
+            name="content">
+        </input>
+        
+        <button class="card-big__action red">
+            <a href="/tasks/to-do"></a>
+            <i class="fas fa-times"></i>
+            <span>Отказ</span>
+        </button>
+
+        <button 
+            class="card-big__action green"
+            type="submit">
+            <i class='fas fa-save'></i>
+            <span>Създай</span>
+        </button>
+
+    </div>
+
+</section> --}}

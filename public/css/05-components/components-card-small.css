@@ -8,7 +8,6 @@
     border-radius: 20px;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
 }
-
 @media screen and (max-width: 604px) {
     .card-small {
         margin: 15px;
@@ -29,7 +28,7 @@
 }
 
 .card-small:hover {
-    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .fa-ellipsis-h {

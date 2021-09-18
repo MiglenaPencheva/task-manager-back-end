@@ -5,9 +5,9 @@ body {
     font-family: 'Montserrat';
     font-size: 20px;
     font-weight: 300;
+    border-radius: 0 0 8px 8px;
     background-color: var(--light); 
     box-shadow: 0px 2px 3px var(--deep);
-    border-radius: 0 0 8px 8px;
 }
 
 @media screen and (max-width: 604px) { 

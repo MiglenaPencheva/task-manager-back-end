@@ -35,12 +35,11 @@
 }
 
 .dropdown-content a {
+    display: block;
     padding: 20px 30px;
-    border-radius: 10px;
     text-align: left;
     font-size: 1.2rem;
-    font-size: 300;
-    display: block;
+    border-radius: 10px;
 }  
 @media screen and (max-width: 604px) {
     .dropdown-content a {
@@ -54,3 +53,7 @@
     color: var(--dark);
     font-style: italic;
 } 
+
+.dropdown-content h4:hover {
+    cursor: auto;
+}

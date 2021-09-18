@@ -1,12 +1,12 @@
 li {
     margin: 0;
     padding: 10px;
-    border-radius: 15px;
     text-align: left;
     font-size: 1.1rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    border-radius: 15px;
 }
 
 @media screen and (max-width: 604px) {
