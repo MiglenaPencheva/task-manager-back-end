@@ -1,30 +1,35 @@
 <section>
+    <div class="card">
 
-    <div class="card-big">
+        <a class="card__back"
+            href="#">
+            <i class="fas fa-arrow-left"></i>
+        </a>
 
-        <p class="card-big__info">Създадена 
-            <BR>на {{task.dateCreated}} в {{task.hourCreated}} 
-            <br>от {{task.userCreated}}</p>
+        <p class="card__info">
+            {{task.dateCreated}}, {{task.hourCreated}} 
+            <br>{{task.userCreated}}
+        </p>
 
-        <p class="card-big__content">{{task.content}}</p>
+        <div class="card__content">{{task.content}}</div>
 
-        <button class="card-big__action red">
+        <button class="card__delete">
             <a href="/tasks/{{task._id}}/delete"></a>
             {{!-- onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');"> --}}
             <i class="fas fa-trash"></i>
             <span>Изтрий</span>
         </button>
         
-        
         {{#if task.completor}}
 
-            <p class="card-big__completed">Завършена 
-                <br>на {{task.dateCompleted}} в {{task.hourCompleted}}
-                <BR>от {{task.userCompleted}}</p>
+            <p class="card__completed">Завършена на 
+                <br>{{task.dateCompleted}} в {{task.hourCompleted}}
+                <BR>от {{task.userCompleted}}
+            </p>
 
         {{else}}
             
-            <button class="card-big__action green"
+            <button class="card__complete"
                 <a href="/tasks/{{task._id}}/complete"></a>
                 {{!-- onclick="return confirm('Сигурен ли си, че искаш да завършиш тази задача?');"> --}}
                 <i class="fas fa-check"></i>
@@ -33,6 +38,6 @@
 
         {{/if}}
 
+        </div> 
     </div>
-
 </section>

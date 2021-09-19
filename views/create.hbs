@@ -2,6 +2,11 @@
 
     <form class="create" method="POST">
         
+        <a class="card__back"
+            href="#">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        
         <p class="create__title">Създай задача</p>
 
         <textarea 
@@ -11,7 +16,7 @@
             name="content">
         </textarea>
 
-        <button class="create__action red">
+        <button class="create__cancel">
             <a href="/tasks/to-do"></a>
             {{!-- onclick="return confirm('Сигурен ли си, че се отказваш?');"> --}}
             <i class="fas fa-times"></i>
@@ -19,7 +24,7 @@
         </button>
 
         <button 
-            class="create__action green"
+            class="create__save"
             type="submit">
             {{!-- onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');" --}}
             <i class='fas fa-save'></i>

@@ -29,17 +29,3 @@
 .completed--inner {
     background-color: var(--lightgrey);
 }
-
-.red {
-    background-color: var(--red);
-}
-.red:hover {
-    color: var(--darkred);
-}
-
-.green {
-    background-color: var(--mid);
-}
-.green:hover {
-    color: var(--deep);
-}

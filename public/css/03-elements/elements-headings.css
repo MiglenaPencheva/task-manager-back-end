@@ -1,6 +1,6 @@
 h1 {
     margin: 0;
-    padding: 12px 0 18px 0;
+    padding: 12px 0 15px 0;
     display: grid;
     align-self: stretch;
     text-align: center;
@@ -14,7 +14,7 @@ h1 {
 
 @media screen and (max-width: 604px) {
     h1 {
-        padding: 8px 0 8px 0;
+        padding: 8px 0 10px 0;
         grid-column: 1 / span 3;
         grid-row: 1;
         font-size: 1.5rem;
@@ -24,7 +24,7 @@ h1 {
 }
 @media screen and (max-width: 350px) {
     h1 {
-        padding: 6px 0 5px 0;
+        padding: 4px 0 8px 0; 
         grid-column: 1 / span 3;
         grid-row: 1;
         font-size: 1.2rem;
@@ -56,7 +56,7 @@ h3 {
 h4 {
     margin: 0;
     padding: 20px 30px;
-    text-align: left;
+    /* text-align: left; */
     font-size: 1.2rem;
     font-weight: 200;
     letter-spacing: 2px;
