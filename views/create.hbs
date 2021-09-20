@@ -17,16 +17,16 @@
         </textarea>
 
         <button class="create__cancel">
-            <a href="/tasks/to-do"></a>
-            {{!-- onclick="return confirm('Сигурен ли си, че се отказваш?');"> --}}
+            <a href="/tasks/to-do"
+                onclick="return confirm('Сигурен ли си, че се отказваш?');"></a>
             <i class="fas fa-times"></i>
             <span>Отказ</span>
         </button>
 
         <button 
             class="create__save"
-            type="submit">
-            {{!-- onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');" --}}
+            type="submit"
+            onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');">
             <i class='fas fa-save'></i>
             <span>Създай</span>
         </button>
@@ -34,33 +34,3 @@
     </form>
 
 </section>
-
-
-{{!-- <section>
-
-    <div class="card-big" method="POST">
-        
-        <p class="card-big__info">Създай задача</p>
-
-        <input 
-            class="card-big__content"
-            type="text" placeholder="Съдържание..." 
-            name="content">
-        </input>
-        
-        <button class="card-big__action red">
-            <a href="/tasks/to-do"></a>
-            <i class="fas fa-times"></i>
-            <span>Отказ</span>
-        </button>
-
-        <button 
-            class="card-big__action green"
-            type="submit">
-            <i class='fas fa-save'></i>
-            <span>Създай</span>
-        </button>
-
-    </div>
-
-</section> --}}

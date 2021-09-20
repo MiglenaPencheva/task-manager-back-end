@@ -83,13 +83,9 @@ router.get('/:id/complete', async (req, res) => {
 
 router.get('/:id/delete', async (req, res) => {
     try {
-        console.log('inside');
         await remove(req.params.id);
-        console.log('after await');
         res.redirect('/tasks/to-do');
-        console.log('after redirect');
     } catch (error) {
-        console.log('if error');
         res.redirect('/404');
     }
 });

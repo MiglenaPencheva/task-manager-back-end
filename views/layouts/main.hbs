@@ -4,17 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>{{title}}</title>
-    {{!-- <link href="/static/css/site.css" type="text/css" rel="stylesheet"> --}}
+    {{!--
+    <link href="/static/css/site.css" type="text/css" rel="stylesheet"> --}}
     <link href="/static/css/site-ittscc.css" type="text/css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin='anonymous'></script>
-    {{!-- <script src="/helpers/utilities.js"></script> --}}
-    {{!--
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    --}}
-
-    {{!--
-    <link rel='shortcut icon' type='image/x-icon' href='/static/images/favicon.png' /> --}}
+    {{!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 </head>
 
 <body>
@@ -29,7 +23,7 @@
                 <i class="fas fa-bars"></i>
                 <div class="dropdown-content">
                     <h4>Здравей, {{user.username}}!</h4>
-                    <hr>                 
+                    <hr>
                     <a href="/tasks/create">Създай нова задача</a>
                     <hr>
                     <a href="/tasks/to-do">Задачи за изпълнение</a>
@@ -40,18 +34,17 @@
                     <a href="/auth/logout">Изход от профила</a>
                 </div>
             </button>
-                        
+
             <h1>Офис помощник</h1>
 
             <button class="menu" onclick="showSearch()">
                 <i class="fas fa-search"></i>
             </button>
 
-            <a class="menu" 
-                href="/tasks/create">
+            <a class="menu" href="/tasks/create">
                 <i class="fas fa-plus"></i>
             </a>
-                
+
         </header>
 
         {{else}}
@@ -63,7 +56,7 @@
         <main>
 
             {{>search}}
-            
+
             {{#if error}}
             <section class="notifications">
                 <p class="notification-message">{{error.message}}</p>
@@ -78,28 +71,20 @@
 
     </div>
 
-
     {{!-- <script type="text/javascript">
-        function JSconfirm() {
-            swal({
-                title: "Your account will be deleted permanently!",
-                text: "Are you sure to proceed?",
-                type: "warning",
+        function confirmDelete() {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Сигурен ли си, че искаш да изтриеш задачата',
                 showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, Remove My Account!",
-                cancelButtonText: "No, I am not sure!",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },
-                function (isConfirm) {
-                    if (isConfirm) {
-                        swal("Account Removed!", "Your account is removed permanently!", "success");
-                    }
-                    else {
-                        swal("Hurray", "Account is not removed!", "error");
-                    }
-                });
+                confirmButtonColor: 'var(--red)',
+                cancelButtonColor: 'var(--deep)',
+                confirmButtonText: 'Изтрий!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('Задачата е изтрита')
+                }
+            })
         }
     </script> --}}
 

@@ -14,8 +14,9 @@
         <div class="card__content">{{task.content}}</div>
 
         <a class="card__delete"
+            onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');"
+            {{!-- onclick="confirmDelete()" --}}
             href="/tasks/{{task._id}}/delete">
-            {{!-- onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');"> --}}
             <i class="fas fa-trash"></i>
             <span>Изтрий</span>
         </a>
@@ -30,8 +31,8 @@
         {{else}}
             
             <a class="card__complete"
-                href="/tasks/{{task._id}}/complete">
-                {{!-- onclick="return confirm('Сигурен ли си, че искаш да завършиш тази задача?');"> --}}
+                href="/tasks/{{task._id}}/complete"
+                onclick="return confirm('Сигурен ли си, че искаш да завършиш тази задача?');">
                 <i class="fas fa-check"></i>
                 <span>Завърши</span>
             </a>
