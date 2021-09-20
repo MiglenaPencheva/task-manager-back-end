@@ -13,12 +13,12 @@
 
         <div class="card__content">{{task.content}}</div>
 
-        <button class="card__delete">
-            <a href="/tasks/{{task._id}}/delete"></a>
+        <a class="card__delete"
+            href="/tasks/{{task._id}}/delete">
             {{!-- onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');"> --}}
             <i class="fas fa-trash"></i>
             <span>Изтрий</span>
-        </button>
+        </a>
         
         {{#if task.completor}}
 
@@ -29,12 +29,12 @@
 
         {{else}}
             
-            <button class="card__complete"
-                <a href="/tasks/{{task._id}}/complete"></a>
+            <a class="card__complete"
+                href="/tasks/{{task._id}}/complete">
                 {{!-- onclick="return confirm('Сигурен ли си, че искаш да завършиш тази задача?');"> --}}
                 <i class="fas fa-check"></i>
                 <span>Завърши</span>
-            </button>
+            </a>
 
         {{/if}}
 

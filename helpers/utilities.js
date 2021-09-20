@@ -1,27 +1,21 @@
-function searching() {
-    let searchBtn = document.querySelector('#search');
-    let isSearching = false;
-
-    if (searchBtn.style.display === "none") {
-        searchBtn.style.display = "block";
-        isSearching = true;
+function showMenu() {
+    let menu = document.querySelector('.dropdown-content');
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
     } else {
-        searchBtn.style.display = "none";
-        isSearching = false;
+        menu.style.display = "block";
     }
 }
-
-function showMenu() {
-    let content = document.querySelector('.menu .dropdown-content');
-
-    if (content.style.display === "none") {
-        content.style.display = "block";
+function showSearch() {
+    let search = document.querySelector('.search');
+    if (search.style.display === "block") {
+        search.style.display = "none";
     } else {
-        content.style.display = "none";
+        search.style.display = "block";
     }
 }
 
 module.exports = {
-    searching,
-    showMenu
+    showMenu,
+    showSearch
 };
