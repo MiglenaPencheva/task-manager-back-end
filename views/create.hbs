@@ -1,13 +1,13 @@
 <section>
 
-    <form class="create" method="POST">
+    <form class="card" method="POST">
         
         <a class="card__back"
             onclick="history.back()">
             <i class="fas fa-arrow-left"></i>
         </a>
         
-        <p class="create__title">Създай задача</p>
+        <p class="card__info">Създай задача</p>
 
         <textarea 
             class="create__textarea"
@@ -16,15 +16,15 @@
             name="content">
         </textarea>
 
-        <button class="create__cancel">
-            <a href="/tasks/to-do"
-                onclick="return confirm('Сигурен ли си, че се отказваш?');"></a>
+        <button 
+            class="card__delete"
+            onclick="history.back()">
             <i class="fas fa-times"></i>
-            <span>Отказ</span>
+            <span>Откажи</span>
         </button>
 
         <button 
-            class="create__save"
+            class="card__complete"
             type="submit"
             onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');">
             <i class='fas fa-save'></i>
