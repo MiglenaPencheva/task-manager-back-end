@@ -22,8 +22,10 @@
 @import '05-components/components-card-small.css';
 @import '05-components/components-create.css';
 @import '05-components/components-dropdown.css';
+@import '05-components/components-error.css';
 @import '05-components/components-header.css';
 @import '05-components/components-search.css';
+@import '05-components/components-user.css';
 
 @import '06-utilities/utilities-hidden.css';
 

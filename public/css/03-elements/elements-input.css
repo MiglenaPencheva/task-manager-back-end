@@ -1,27 +1,23 @@
 input {
-    margin: 0 10px 0 0;
     padding: 10px 15px;
-    width: 30%;
     border: 1px solid var(--mid);
     outline: none;
     border-radius: 10px;
     text-align: center;
     font-size: 1.2rem;
     color: var(--dark);
-    transition: 0.3s;
+}
+input:focus {
+    border: 2px solid var(--mid);
 }
 
 @media screen and (max-width: 604px) { 
     input {
-        margin: 0 8px 0 0;
-        width: 50%;
         font-size: 1.1rem;
     }
 }
 @media screen and (max-width: 350px) {
     input {
-        margin: 0 5px 0 0;
-        width: 45%;
         font-size: 1rem;
     }
 }

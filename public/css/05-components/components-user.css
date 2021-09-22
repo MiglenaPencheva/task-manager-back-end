@@ -1,0 +1,67 @@
+.auth__input {
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+}
+@media screen and (max-width: 604px) { 
+    .auth__input {
+        width: 250px;
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width: 350px) {
+    .auth__input {
+        width: 70%;
+        font-size: 1rem;
+    }
+}
+
+.auth__submit {
+    display: block;
+    margin: 0 auto 50px auto;
+    padding: 10px 15px;
+    width: 330px;
+    justify-content: center;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    background-color: var(--mid);
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 604px) { 
+    .auth__submit {
+        width: 280px;
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width: 350px) {
+    .auth__submit {
+        width: 80%;
+        font-size: 1rem;
+    }
+}
+.auth__submit:hover {
+    color: var(--dark);
+    font-size: 110%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.auth__redirect {
+    padding: 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+@media screen and (max-width: 604px) { 
+    .auth__redirect {
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width: 350px) {
+    .auth__redirect {
+        font-size: 1rem;
+    }
+}
+
+.auth__redirect-link:hover {
+    font-style: italic;
+    font-size: 110%;
+}

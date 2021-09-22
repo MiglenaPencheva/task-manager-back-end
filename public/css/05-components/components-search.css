@@ -12,6 +12,23 @@
     }
 }
 
+.search-input {
+    margin: 0 10px 0 0;
+    width: 30%;
+}
+@media screen and (max-width: 604px) { 
+    search-input {
+        margin: 0 8px 0 0;
+        width: 50%;
+    }
+}
+@media screen and (max-width: 350px) {
+    search-input {
+        margin: 0 5px 0 0;
+        width: 45%;
+    }
+}
+
 .search__btn {
     padding: 10px 15px;
     min-height: max-content;

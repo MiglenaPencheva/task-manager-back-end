@@ -58,9 +58,7 @@
             {{>search}}
 
             {{#if error}}
-            <section class="notifications">
-                <p class="notification-message">{{error.message}}</p>
-            </section>
+                <p class="error">{{error.message}}</p>
             {{/if}}
 
             {{{body}}}

@@ -1,11 +1,38 @@
-<h2>Регистрирай профил</h2>
+<section>
 
-<form class="auth-form" action="/auth/register" method="POST">
-        <input type="text" class="auth-input" placeholder="потребителско име" name="username" value="">
-        <input type="password" class="auth-input" placeholder="парола" name="password" value="">
-        <input type="password" class="auth-input" placeholder="повтори паролата" name="repeatPassword" value="">
-        {{!-- <a href="/auth/register">Регистрация</a> --}}
-        <input type="submit" class="auth-btn" value="Регистрация">
-</form>
+    <h2>Регистрирай профил</h2>
 
-<div class="redirect">Вече имаш профил? <a class="redirect-link" href="/auth/login"><b>Влез</b></a> в профила си.</div>
+    <form action="/auth/register" method="POST">
+        <input 
+            type="text" 
+            class="auth__input"  
+            placeholder="потребителско име" 
+            name="username" 
+            value="">
+        <input 
+            type="password" 
+            class="auth__input"  
+            placeholder="парола" 
+            name="password" 
+            value="">
+        <input 
+            type="password" 
+            class="auth__input" 
+            placeholder="повтори паролата" 
+            name="repeatPassword" 
+            value="">
+        <input 
+            type="submit" 
+            class="auth__submit" 
+            value="Регистрация">
+            <a href="/auth/register"></a>
+    </form>
+
+    <p class="auth__redirect">Вече имаш профил?
+        <br><a class="auth__redirect-link" 
+                href="/auth/login">
+        <b>Влез</b></a>
+        в профила си.</br>
+    </p>
+
+</section>

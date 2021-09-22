@@ -37,9 +37,8 @@ router.get('/create', (req, res) => {
 router.post('/create', async (req, res) => {
 
     try {
-        if (req.body.content === '') throw { message: 'Попълни съдържание' };
-
         const task = req.body;
+        if (task.content.trim() === '') throw {message: 'Попълни съдържание!'};
         task.creator = req.user._id;
         task.isCompleted = false;
         task.completor = '';
@@ -78,6 +77,7 @@ router.get('/:id/complete', async (req, res) => {
         res.redirect('/tasks/to-do');
     } catch (error) {
         res.redirect('/404');
+        // res.render('create', "Нещо се обърка...");
     }
 });
 

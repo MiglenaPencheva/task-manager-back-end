@@ -1,0 +1,17 @@
+.error {
+    margin: 0 auto;
+    padding-top: 40px;
+    width: max-content;
+    color: var(--darkred);
+    font-weight: 400;
+}
+@media screen and (max-width: 604px) { 
+    .error {
+        margin-top: 25px;
+    }
+}
+@media screen and (max-width: 350px) { 
+    .error {
+        margin-top: 20px;
+    }
+}
