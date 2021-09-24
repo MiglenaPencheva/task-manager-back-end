@@ -1,25 +1,23 @@
 <section>
     <div class="card">
 
-        <a class="card__back"
-            onclick="history.back()">
-            <i class="fas fa-arrow-left"></i>
-        </a>
+        {{>back-btn}}
 
         <p class="card__info">
             {{task.dateCreated}}, {{task.hourCreated}} 
             <br>{{task.userCreated}}
         </p>
 
-        <div class="card__content">{{task.content}}</div>
+        <p class="card__content">{{task.content}}</p>
 
-        <button 
-            class="card__delete"
+        <a
+            class="action-btn action-btn__red"
+            type="submit"
             onclick="return confirm('Сигурен ли си, че искаш да изтриеш тази задача?');"
             href="/tasks/{{task._id}}/delete">
             <i class="fas fa-trash"></i>
             <span>Изтрий</span>
-        </button>
+        </a>
         
         {{#if task.completor}}
 
@@ -30,13 +28,13 @@
 
         {{else}}
             
-            <button 
-                class="card__complete"
+            <a 
+                class="action-btn action-btn__green"
                 onclick="return confirm('Сигурен ли си, че искаш да завършиш тази задача?');"
                 href="/tasks/{{task._id}}/complete">
                 <i class="fas fa-check"></i>
                 <span>Завърши</span>
-            </button>
+            </a>
 
         {{/if}}
 

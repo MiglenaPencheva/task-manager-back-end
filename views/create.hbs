@@ -2,29 +2,27 @@
 
     <form class="card" method="POST">
         
-        <a class="card__back"
-            onclick="history.back()">
-            <i class="fas fa-arrow-left"></i>
-        </a>
+        {{>back-btn}}
         
         <p class="card__info">Създай задача</p>
 
         <textarea 
-            class="create__textarea"
-            type="text" 
+            class="card__content"
+            type="text"
+            cols="10"
             placeholder="Съдържание..." 
             name="content">
         </textarea>
 
         <button 
-            class="card__delete"
+            class="action-btn action-btn__red"
             onclick="history.back()">
             <i class="fas fa-times"></i>
             <span>Откажи</span>
         </button>
 
         <button 
-            class="card__complete"
+            class="action-btn action-btn__green"
             type="submit"
             onclick="return confirm('Сигурен ли си, че искаш да създадеш тази задача?');">
             <i class='fas fa-save'></i>
