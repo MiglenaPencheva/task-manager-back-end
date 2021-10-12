@@ -1,7 +1,7 @@
 .error {
     margin: 0 auto;
     padding-top: 40px;
-    width: max-content;
+    text-align: center;
     color: var(--darkred);
     font-weight: 400;
 }
