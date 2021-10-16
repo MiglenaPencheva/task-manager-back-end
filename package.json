@@ -2,11 +2,11 @@
   "name": "task-manager-back-end",
   "version": "1.0.0",
   "description": "",
-  "main": "routes.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "SET NODE_ENV=development && nodemon ./index.js",
-    "prod": "SET NODE_ENV=production && node ./index.js"
+    "start": "SET NODE_ENV=development&& nodemon ./index.js",
+    "prod": "SET NODE_ENV=production&& node ./index.js"
   },
   "keywords": [],
   "author": "",

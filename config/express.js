@@ -2,13 +2,14 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const handlebars = require('express-handlebars');
 const cors = require('cors');
-const secret = 'secret';
+// const { PORT } = require('./config');
 const { auth } = require('../middlewares/authMiddleware');
 
 module.exports = function (app) {
 
     app.use(cors({
-        origin: 'http://localhost:3033',
+        // origin: 'http://localhost:3033',
+        // origin: PORT,
         credentials: true,
         exposedHeaders: 'Authorization'
     }));
