@@ -9,7 +9,7 @@ const config = {
         COOKIE_NAME: 'TOKEN',
     },
     production: {
-        PORT: null || 3333,
+        PORT: process.env.PORT || 3333,
         DB_URI: `mongodb+srv://Mega:dhoToZTeigtBF0Zy@taskmanagercluster.an5m3.mongodb.net/test`,
         SALT_ROUNDS: 10,
         SECRET: 'STAVAMNOGOSOLENO',
