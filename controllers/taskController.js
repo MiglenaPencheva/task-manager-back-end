@@ -4,30 +4,30 @@ const { getUserById } = require('../services/authService');
 
 router.get('/all', async (req, res) => {
     const tasks = await getAll(req.query.search);
-    let formatedTasks = tasks.map(x => formatDate(x));
-    let isOne = formatedTasks.length == 1 ? true : false;
-    res.render('taskPageAll', { formatedTasks, isOne });
+    let formattedTasks = tasks.map(x => formatDate(x));
+    let isOne = formattedTasks.length == 1 ? true : false;
+    res.render('taskPageAll', { formattedTasks, isOne });
 });
 
 router.get('/archive', async (req, res) => {
     const completed = await getAllCompleted(req.query.search);
-    let formatedCompleted = completed.map(x => formatDate(x));
-    let isOne = formatedCompleted.length == 1 ? true : false;
-    res.render('taskPageArchive', { formatedCompleted, isOne });
+    let formattedCompleted = completed.map(x => formatDate(x));
+    let isOne = formattedCompleted.length == 1 ? true : false;
+    res.render('taskPageArchive', { formattedCompleted, isOne });
 });
 
 router.get('/to-do', async (req, res) => {
     const toDoList = await getAllToDo(req.query.search);
-    let formatedToDoList = toDoList.map(x => formatDate(x));
-    let isOne = formatedToDoList.length == 1 ? true : false;
-    res.render('taskPageToDo', { formatedToDoList, isOne });
+    let formattedToDoList = toDoList.map(x => formatDate(x));
+    let isOne = formattedToDoList.length == 1 ? true : false;
+    res.render('taskPageToDo', { formattedToDoList, isOne });
 });
 
 router.get('/my-tasks', async (req, res) => {
     const myTasks = await getMine(req.query.search, req.user._id);
-    let formatedMyTasks = myTasks.map(x => formatDate(x));
-    let isOne = formatedMyTasks.length == 1 ? true : false;
-    res.render('taskPageMine', { formatedMyTasks, isOne });
+    let formattedMyTasks = myTasks.map(x => formatDate(x));
+    let isOne = formattedMyTasks.length == 1 ? true : false;
+    res.render('taskPageMine', { formattedMyTasks, isOne });
 });
 
 router.get('/create', (req, res) => {
@@ -41,7 +41,7 @@ router.post('/create', async (req, res) => {
         if (task.content.trim() === '') throw {message: 'Попълни съдържание!'};
         task.creator = req.user._id;
         task.isCompleted = false;
-        task.completor = '';
+        task.completer = '';
 
         await create(task);
         res.redirect('/tasks/to-do');
@@ -59,11 +59,10 @@ router.get('/:id/details', async (req, res) => {
         let creator = await getUserById(task.creator);
         formatCreator(task, creator);
 
-        if (task.completor) {
-            let completor = await getUserById(task.completor);
-            formatCompletor(task, completor);
+        if (task.completer) {
+            let completer = await getUserById(task.completer);
+            formatCompleter(task, completer);
         }
-
         res.render('details', { task });
 
     } catch (error) {
@@ -81,6 +80,7 @@ router.get('/:id/complete', async (req, res) => {
     }
 });
 
+
 router.get('/:id/delete', async (req, res) => {
     try {
         await remove(req.params.id);
@@ -96,7 +96,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-const monts = {
+const months = {
     'Jan': 'ян',
     'Feb': 'февр',
     'Mar': 'март',
@@ -116,7 +116,7 @@ function formatDate(task) {
     let timeCreated = createdAt.toString().split(' ');
 
     let day = timeCreated[2];
-    let month = monts[timeCreated[1]];
+    let month = months[timeCreated[1]];
     let year = timeCreated[3];
 
     task.dateCreated = `${day} ${month} ${year}`;
@@ -129,7 +129,7 @@ function formatDate(task) {
         let timeCompleted = completedAt.toString().split(' ');
 
         let dayC = timeCompleted[2];
-        let monthC = monts[timeCompleted[1]];
+        let monthC = months[timeCompleted[1]];
         let yearC = timeCompleted[3];
         task.dateCompleted = `${dayC} ${monthC} ${yearC}`;
 
@@ -145,7 +145,7 @@ function formatCreator(task, creator) {
     return task;
 }
 
-function formatCompletor(task, completor) {
-    task.userCompleted = completor.username;
+function formatCompleter(task, completer) {
+    task.userCompleted = completer.username;
     return task;
 }

@@ -1,15 +1,15 @@
 <section>
 
-    {{#if formatedTasks}}
+    {{#if formattedTasks}}
 
         {{#if isOne}}
             <h3>1 задача</h3>
         {{else}}
-            <h3>{{formatedTasks.length}} задачи</h3>
+            <h3>{{formattedTasks.length}} задачи</h3>
         {{/if}}
 
     <div>
-        {{#each formatedTasks}}
+        {{#each formattedTasks}}
         {{> task}}
         {{/each}}
     </div>

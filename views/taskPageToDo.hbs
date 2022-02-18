@@ -1,16 +1,16 @@
 <section>
 
-    {{#if formatedToDoList}}
+    {{#if formattedToDoList}}
 
         {{#if isOne}}
             <h3>1 задача за изпълнение</h3>
         {{else}}
-            <h3>{{formatedToDoList.length}} задачи за изпълнение</h3>
+            <h3>{{formattedToDoList.length}} задачи за изпълнение</h3>
         {{/if}}
 
 
     <div>
-        {{#each formatedToDoList}}
+        {{#each formattedToDoList}}
         {{> task}}
         {{/each}}
     </div>

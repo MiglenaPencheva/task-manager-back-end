@@ -52,13 +52,13 @@ async function create(data) {
 }
 
 async function complete(taskId, userId) {
-    const existing = await Task.findById(taskId);
-    if (!existing) {
+    const task = await Task.findById(taskId);
+    if (!task) {
         throw new ReferenceError('No such ID in database');
     }
-    existing.isCompleted = true;
-    existing.completor = userId;
-    return existing.save();
+    task.isCompleted = true;
+    task.completer = userId;
+    return task.save();
 }
 
 async function remove(taskId) {

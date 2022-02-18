@@ -1,16 +1,16 @@
 <section>
 
-    {{#if formatedCompleted}}
+    {{#if formattedCompleted}}
 
         {{#if isOne}}
             <h3>1 завършена задача</h3>
         {{else}}
-            <h3>{{formatedCompleted.length}} завършени задачи</h3>
+            <h3>{{formattedCompleted.length}} завършени задачи</h3>
         {{/if}}
 
 
     <div>
-        {{#each formatedCompleted}}
+        {{#each formattedCompleted}}
             {{> task}}
         {{/each}}
     </div>
