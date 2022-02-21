@@ -1,6 +1,7 @@
 li {
     margin: 0;
     padding: 10px;
+    list-style-type: none;
     text-align: left;
     font-size: 1.1rem;
     overflow: hidden;
@@ -11,6 +12,7 @@ li {
 
 @media screen and (max-width: 604px) {
     li {
+        list-style-type: none;
         padding: 9px;
         font-size: 1rem;
         border-radius: 12px;
@@ -18,6 +20,7 @@ li {
 }
 @media screen and (max-width: 350px) {
     li {
+        list-style-type: none;
         padding: 8px;
         font-size: 0.9rem;
         border-radius: 10px;
